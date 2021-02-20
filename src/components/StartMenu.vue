@@ -17,7 +17,7 @@ export default {
 #startMenu{
     position: absolute;
     left: 1.5px;
-    bottom: 28px;
+    bottom: 38px;
     width: 120px;
     height: 275px;
     background-color: black;
