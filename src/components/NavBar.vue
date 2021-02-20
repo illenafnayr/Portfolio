@@ -1,6 +1,7 @@
 <template>
 <div id="navbar">
-    <div id="startbtn">
+    <StartMenu />
+    <div id="startbtn" v-on:click="showMenu" >
         <img src="../assets/windows.png" alt="windows" id="windowslogo" >
         <span>START</span>
     </div>
@@ -12,10 +13,12 @@
 </template>
 
 <script>
+import StartMenu from '@/components/StartMenu.vue'
+
 export default {
   name: 'NavBar',
-  props: {
-    msg: String
+  components: {
+      StartMenu
   },
   data() {
       return {
@@ -29,12 +32,15 @@ export default {
       setInterval(this.getTime, (1000*60))
   },
   methods: {
-      getTime: function() {
+      getTime() {
           const today = new Date();
         //   const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
           this.timestamp = today.getHours() + ":" + today.getMinutes();
         //   const time = time;
         //   this.timestamp = time;
+      },
+      showMenu() {
+          document.getElementById('startMenu').style.display = 'block'
       }
   }
 }
@@ -51,6 +57,9 @@ export default {
     height: 25px;
     width: 100vw;
     background-color: rgb(192,192,192);
+    border-top: 1px solid black;
+    border-width:2px;
+    border-color: #ffffff
 }
 
 #startbtn {
@@ -59,7 +68,7 @@ export default {
     left: 3px;
     border: .5px solid black;
     box-sizing: border-box;
-    margin-top: 2px;
+    margin-top: 2.5px;
     margin-bottom: 2px;
     position: absolute;
     display: flex;
