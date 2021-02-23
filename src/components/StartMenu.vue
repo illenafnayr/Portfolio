@@ -2,18 +2,17 @@
 <div id="startMenu">
 
   <div id="sidebar">
-    <span id="startMenuTitle">Ryan Fanelli Software Engineer</span>
+    <span id="startMenuTitle">Ryan Fanelli</span>
   </div>
 
   <div id="appList">
       <div class="block" >
-        Portfolio
+        <img src="../assets/Resume-Icon.png" alt="Portfolio" id="resumeIcon">
+        <span>Projects</span>
       </div>
       <div class="block" >
-        Resume
-      </div>
-      <div class="block" >
-        Contact
+        <img src="../assets/Mailbox-with-phone.png" alt="Portfolio" id="mailboxPhone">
+        <span>Contact</span>
       </div>
       <a class="block" href="https://github.com/illenafnayr" target="_blank">
         <div class="container">
@@ -33,7 +32,12 @@
       </div>
       <hr>
       <div class="block" >
-        Portfolio
+        <img src="../assets/Starfield.png" alt="Portfolio" id="suspend">
+        <span>Suspend</span>
+      </div>
+      <div class="block" >
+        <img src="../assets/Power-down.png" alt="Portfolio" id="powerDown">
+        <span>Shut Down</span>
       </div>
   </div>
 </div>
@@ -65,12 +69,13 @@ export default {
 #sidebar{
   height: 100%;
   width: 12.5%;
-  background-color: rgb(0,0,123);
+  /* background-color: rgb(0,0,123); */
   display: flex;
   justify-content: center;
   align-items: flex-end;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
+  background-image: linear-gradient(180deg, black, rgb(0,0,123));
 }
 
 #appList {
@@ -85,6 +90,8 @@ export default {
   transform: rotate(180deg);
   color: #FFFFFF;
   margin-bottom: 40%;
+  padding: 1.5%;
+  font-size: .925rem;
 }
 
 hr {
@@ -127,7 +134,7 @@ img {
   margin: 0% 3% 0% 5%;
 }
 
-.block:hover #documentsFolder {
+.block:hover #documentsFolder, .block:hover #mailboxPhone, .block:hover #resumeIcon {
   filter: none;
 }
 
@@ -136,6 +143,33 @@ img {
   margin-left: 1.5% ;
   margin-right: 1%;
   width: auto;
+}
+
+#mailboxPhone {
+  height: 45%;
+  width: auto;
+  margin-left: 3%;
+  margin-right: 3.5%;
+}
+
+#resumeIcon {
+  height: 40%;
+  width: auto;
+  margin-right: 3%
+}
+
+#suspend {
+  height: 52.5%;
+  width: auto;
+  margin-left: 3.5%;
+  margin-right: 2.5%;
+}
+
+#powerDown {
+  height: 55%;
+  width: auto;
+  margin-left: 3.5%;
+  margin-right: 2.5%;
 }
 
 
