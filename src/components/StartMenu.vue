@@ -134,6 +134,7 @@ img {
 #documentsFolder {
   height: 65%;
   margin-left: 1.5% ;
+  margin-right: 1%;
   width: auto;
 }
 
