@@ -10,16 +10,16 @@
         Portfolio
       </div>
       <div class="block" >
-        Portfolio
+        Resume
       </div>
       <div class="block" >
-        Portfolio
+        Contact
       </div>
       <div class="block" >
-        Portfolio
+        Git Hub
       </div>
       <div class="block" >
-        Portfolio
+        LinkedIn
       </div>
       <div class="block" >
         Portfolio
@@ -87,10 +87,7 @@ hr {
 .block {
   height: 14.2857142857%;
   box-sizing: border-box;
-  /* border-bottom: 1px solid black;
-  border-right: 1px solid black; */
   width: 100%;
-  /* background-color: aqua; */
   display: flex;
   align-items: center;
 }

@@ -1,6 +1,6 @@
 <template>
 <div id="navbar">
-    <StartMenu v-bind:style='{"display": (isActive? "flex" : "none")}' />
+    <StartMenu v-bind:style='{"display": (isActive? "FLEX" : "none")}' />
     <div id="btnContainer">
         <div id="startbtn" v-on:click="showMenu()" v-bind:style='{"border-color": (isActive? "#808080 #FFFFFF #FFFFFF #808080" : "#FFFFFF #808080 #808080 #FFFFFF")}' >
             <img src="../assets/windows.png" alt="windows" id="windowslogo" >
@@ -41,7 +41,7 @@ export default {
       getTime() {
           const today = new Date();
         //   const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-          this.timestamp = today.getHours() + ":" + today.getMinutes();
+          this.timestamp = today.getHours() + ":" + (today.getMinutes()<10?'0':'') + today.getMinutes();
         //   const time = time;
         //   this.timestamp = time;
       },
