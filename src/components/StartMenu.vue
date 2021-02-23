@@ -15,14 +15,21 @@
       <div class="block" >
         Contact
       </div>
+      <a class="block" href="https://github.com/illenafnayr" target="_blank">
+        <div class="container">
+          <img src="../assets/github-logo.png" alt="Git Hub">
+          <span>Git Hub</span>
+        </div>
+      </a>
+      <a class="block" href="https://www.linkedin.com/in/ryan-fanelli/" target="_blank">
+        <div class="container">
+          <img src="../assets/linkedin-logo.png" alt="Git Hub">
+          <span>LinkedIn</span>
+        </div>
+      </a>
       <div class="block" >
-        Git Hub
-      </div>
-      <div class="block" >
-        LinkedIn
-      </div>
-      <div class="block" >
-        Portfolio
+        <img src="../assets/DocumentsFolder.png" alt="Portfolio" id="documentsFolder">
+        <span>Portfolio</span>
       </div>
       <hr>
       <div class="block" >
@@ -40,7 +47,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 #startMenu{
     position: absolute;
@@ -62,12 +69,13 @@ export default {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
 }
 
 #appList {
   height: 100%;
   width: 90%;
-  /* border: 1px solid gold; */
   display: flex;
   flex-direction: column;
 }
@@ -90,6 +98,8 @@ hr {
   width: 100%;
   display: flex;
   align-items: center;
+  color: black;
+  /* border: 1px solid gold; */
 }
 
 .block:hover {
@@ -97,5 +107,35 @@ hr {
   background-color: rgb(0,0,123);
   color: #FFFFFF;
 }
+
+.block:hover img {
+  filter: invert(100%);
+}
+
+.block:link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  display: flex;
+  align-items: center
+}
+
+img {
+  width: 10%;
+  margin: 0% 3% 0% 5%;
+}
+
+.block:hover #documentsFolder {
+  filter: none;
+}
+
+#documentsFolder {
+  height: 65%;
+  margin-left: 1.5% ;
+  width: auto;
+}
+
 
 </style>
