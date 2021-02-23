@@ -134,7 +134,7 @@ img {
   margin: 0% 3% 0% 5%;
 }
 
-.block:hover #documentsFolder, .block:hover #mailboxPhone, .block:hover #resumeIcon {
+.block:hover #documentsFolder, .block:hover #mailboxPhone, .block:hover #resumeIcon, .block:hover #suspend, .block:hover #powerDown {
   filter: none;
 }
 
