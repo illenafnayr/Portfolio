@@ -35,10 +35,12 @@
         <img src="../assets/Starfield.png" alt="Portfolio" id="suspend">
         <span>Suspend</span>
       </div>
-      <div class="block" >
+      <a href="https:www.google.com" class="block">
+      <div class="container" >
         <img src="../assets/Power-down.png" alt="Portfolio" id="powerDown">
         <span>Shut Down</span>
       </div>
+      </a>
   </div>
 </div>
 </template>
@@ -52,6 +54,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 #startMenu{
     position: absolute;
@@ -64,6 +67,7 @@ export default {
     /* border-width:1px; */
     border-color:#FFFFFF #808080 #808080 #FFFFFF;
     display: flex;
+    font-family: 'VT323', monospace;
 }
 
 #sidebar{
@@ -126,7 +130,9 @@ hr {
 
 .container {
   display: flex;
-  align-items: center
+  align-items: center;
+  width: 100%;
+  height: 100%
 }
 
 img {
@@ -166,10 +172,10 @@ img {
 }
 
 #powerDown {
-  height: 55%;
+  height: 60%;
   width: auto;
-  margin-left: 3.5%;
-  margin-right: 2.5%;
+  margin-left: 2.5%;
+  margin-right: 1.75%;
 }
 
 
