@@ -1,15 +1,15 @@
 <template>
-  <div ref="draggableContainer" id="draggable-container">
-    <div id="draggable-header" @mousedown="dragMouseDown">
-      <span>header</span>
+  <div ref="draggableContainer" id="readMe-container">
+    <div id="readMe-header" @mousedown="dragMouseDown">
+      <img src="../assets/Pin-sheet.png" alt="">
     </div>
-    <span>Body</span>
+    <span id="readMeBody">README.txt</span>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'DraggableDiv',
+  name: 'ReadMe',
   data: function () {
     return {
       positions: {
@@ -48,25 +48,32 @@ export default {
 </script>
 
 <style>
-#draggable-container {
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+
+#readMe-container {
   position: absolute;
+  left: 80%;
+  top: 15%;
   z-index: 9;
-  height: 30%;
-  width: 50%;
-  border: 2px solid;
-  background-color: rgb(192,192,192);
-  border-width:1px;
-  border-color:#FFFFFF #808080 #808080 #FFFFFF;
-  resize: both;
-  overflow: auto;
+  font-family: 'VT323', monospace;
+  text-align:center;
+  margin: 0%;
+  padding: 0%;
 }
-#draggable-header {
+
+#readMe-container:active {
+    background-color: blue;
+    color: white;
+}
+
+#readMe-header {
   cursor:move;
   z-index: 10;
-  border: 1px solid black;
   color: white;
-  background-image: linear-gradient(90deg, rgb(0,0,123), black);
+}
 
-
+#readMeBody {
+    font-size: .85rem;
 }
 </style>
