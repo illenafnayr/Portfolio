@@ -1,5 +1,5 @@
 <template>
-  <div ref="draggableContainer" id="draggable-container" v-bind:style='{"display": (isActive? "block" : "none")}'>
+  <div ref="draggableContainer" id="draggable-container">
     <div id="draggable-header" @mousedown="dragMouseDown">
       <span>About Me</span>
       <div class="close" v-on:click="closeAboutMe()">X</div>
@@ -18,7 +18,6 @@ export default {
         clientY: undefined,
         movementX: 0,
         movementY: 0,
-        isActive: true
       }
     }
   },
@@ -46,7 +45,7 @@ export default {
       document.onmousemove = null
     },
     closeAboutMe () {
-      this.isActive = false
+      document.querySelector('#draggable-container').style.display = 'none'
     }
   }
 }

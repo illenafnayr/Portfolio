@@ -33,6 +33,11 @@ export default {
   },
   mounted() {
       this.getTime()
+      document.querySelector('#desktop').addEventListener('click', () => {
+          if (document.querySelector('#startMenu').style.display === "flex") {
+              this.isActive = false
+          }
+      })
   },
   created() {
       setInterval(this.getTime, (1000*60))
@@ -49,12 +54,6 @@ export default {
         //   document.getElementById('startMenu').style.display = 'block'
         this.isActive = !this.isActive
       },
-      bodyClick() {
-          document.getElementById('app').addEventListener('click', () => {
-              this.isActive = false
-              console.log('asdf')
-          })
-      }
   }
 }
 </script>

@@ -1,35 +1,28 @@
 <template>
   <div class="home">
-    <ReadMe v-on:click="showAboutMe()" />
-    <AboutMe v-bind:style='{"display": (isActive? "block" : "none")}'/>
+    <Desktop />
     <NavBar />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
+import Desktop from '@/components/Desktop.vue'
 import NavBar from '@/components/NavBar.vue'
-import AboutMe from '@/components/AboutMe.vue'
-import ReadMe from '@/components/ReadMe.vue'
-// import VueResizable from 'vue-resizable'
+
 
 export default {
   name: 'Home',
   components: {
-    ReadMe,
-    AboutMe,
+    Desktop,
     NavBar
   },
-  data() {
-    return {
-      isActive: false
-    }
+  mounted() {
+    console.warn('this message will sefl destruct in 30s')
+    setTimeout(() => {
+      console.error('ka-boom!')
+    }, 1000 *30)
   },
-  methods: {
-    showAboutMe() {
-      this.isActive = !this.isActive
-    }
-  }
 }
 </script>
 
