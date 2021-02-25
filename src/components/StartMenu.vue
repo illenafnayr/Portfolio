@@ -26,7 +26,7 @@
           <span>LinkedIn</span>
         </div>
       </a>
-      <div class="block" >
+      <div class="block" v-on:click="showPortfolio()">
         <img src="../assets/DocumentsFolder.png" alt="Portfolio" id="documentsFolder">
         <span>Portfolio</span>
       </div>
@@ -47,7 +47,14 @@
 
 <script>
 export default {
-  name: 'StartMenu'
+  name: 'StartMenu',
+  methods: {
+    showPortfolio() {
+      if (document.querySelector('#portfolio-container').style.display === "none") {
+        document.querySelector('#portfolio-container').style.display = "block"
+      }
+    }
+  }
 }
 </script>
 

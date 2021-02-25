@@ -1,16 +1,20 @@
 <template>
-  <div ref="draggableContainer" id="draggable-container">
-    <div id="draggable-header" @mousedown="dragMouseDown">
-      <span>About Me</span>
+  <div ref="draggableContainer" id="portfolio-container">
+    <div id="portfolio-header" @mousedown="dragMouseDown">
+      <span>Portfolio</span>
       <div class="close" v-on:click="closeAboutMe()">X</div>
     </div>
-    <p>Not only a dedicated software engineer with a passion for knowledge and creativity, but also an innovative problem solver with keen observation skills. An amicable person that will inspire confidence and curiosity amongst a team. I deliver performance driven by efficiency and adaptability. </p>
+    <a href="">heroku</a>
+    <a href="">heroku</a>
+    <a href="">heroku</a>
+    <a href="">heroku</a>
+    <a href="">heroku</a>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'AboutMe',
+  name: 'Portfolio',
   data: function () {
     return {
       positions: {
@@ -45,7 +49,7 @@ export default {
       document.onmousemove = null
     },
     closeAboutMe () {
-      document.querySelector('#draggable-container').style.display = 'none'
+      document.querySelector('#portfolio-container').style.display = 'none'
     }
   }
 }
@@ -55,7 +59,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 
-#draggable-container {
+#portfolio-container {
   position: absolute;
   z-index: 10;
   height: 31%;
@@ -69,10 +73,10 @@ export default {
   font-family: 'VT323', monospace;
   text-align:center;
   display: none;
-  top: 25%;
+  top: 21%;
   left: 25%;
 }
-#draggable-header {
+#portfolio-header {
   cursor:move;
   z-index: 10;
   border: 1px solid black;
