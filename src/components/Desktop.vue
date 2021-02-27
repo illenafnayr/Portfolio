@@ -1,6 +1,7 @@
 <template>
   <div id="desktop">
     <span id="title">Fanelli Studios</span>
+    <Contact />
     <ResumeIcon v-on:dblclick="showResume()"/>
     <Resume v-bind:style='{"display": (isActive? "block" : "none")}' />
     <Portfolio v-bind:style='{"display": (isActive? "block" : "none")}' />
@@ -12,6 +13,7 @@
 
 <script>
 // @ is an alias to /src
+import Contact from '@/components/Contact.vue'
 import ResumeIcon from '@/components/ResumeIcon.vue'
 import Resume from '@/components/Resume.vue'
 import AboutMe from '@/components/AboutMe.vue'
@@ -22,6 +24,7 @@ import Portfolio from '@/components/Portfolio.vue'
 export default {
   name: 'Desktop',
   components: {
+    Contact,
     ReadMe,
     ResumeIcon,
     Resume,
