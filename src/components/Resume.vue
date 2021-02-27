@@ -1,22 +1,23 @@
 <template>
-  <div ref="draggableContainer" id="readMe-container">
-    <div id="readMe-header" @mousedown="dragMouseDown">
-      <img src="../assets/Pin-sheet.png" alt="">
+  <div ref="draggableContainer" id="resume-container">
+    <div id="resume-header" @mousedown="dragMouseDown">
+      <span>Resume</span>
+      <div class="close" v-on:click="closePortfolio()">X</div>
     </div>
-    <span id="readMeBody">README.txt</span>
+    <iframe src="https://drive.google.com/file/d/1KP3j4HTnb6PT7QXT_49KP7CdftAgPvc7/preview" width="640" height="480"></iframe>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'ReadMe',
+  name: 'Resume',
   data: function () {
     return {
       positions: {
         clientX: undefined,
         clientY: undefined,
         movementX: 0,
-        movementY: 0
+        movementY: 0,
       }
     }
   },
@@ -42,6 +43,9 @@ export default {
     closeDragElement () {
       document.onmouseup = null
       document.onmousemove = null
+    },
+    closePortfolio () {
+      document.querySelector('#resume-container').style.display = 'none'
     }
   }
 }
@@ -51,30 +55,52 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 
-#readMe-container {
+#resume-container {
   position: absolute;
-  left: 80%;
-  top: 15%;
-  z-index: 9;
+  z-index: 10;
+  height: 55%;
+  width: fit-content;
+  border: 2px solid;
+  background-color: rgb(192,192,192);
+  border-width:1px;
+  border-color:#FFFFFF #808080 #808080 #FFFFFF;
+  resize: both;
+  overflow: auto;
   font-family: 'VT323', monospace;
   text-align:center;
-  margin: 0%;
-  padding: 0%;
-  cursor: pointer;
+  display: none;
+  top: 21%;
+  left: 30%;
 }
-
-#readMe-container:active {
-    background-color: blue;
-    color: white;
-}
-
-#readMe-header {
+#resume-header {
   cursor:move;
   z-index: 10;
+  border: 1px solid black;
   color: white;
+  background-image: linear-gradient(90deg, rgb(0,0,123), black);
+  display: flex;
+  justify-content: space-between;
 }
 
-#readMeBody {
-    font-size: .85rem;
+.close {
+  border: 1px solid;
+  border-width:1px;
+  border-color:#FFFFFF #808080 #808080 #FFFFFF;
+  background-color: rgb(192,192,192);
+  width: 3%;
 }
+
+.close:active{
+    border-color: #808080  #FFFFFF  #FFFFFF #808080;
+}
+
+#links {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-evenly;
+  height: 92%;
+  border: 1px solid gold;
+}
+
 </style>

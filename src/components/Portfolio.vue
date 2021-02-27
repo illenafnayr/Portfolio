@@ -4,11 +4,19 @@
       <span>Portfolio</span>
       <div class="close" v-on:click="closeAboutMe()">X</div>
     </div>
-    <a href="">heroku</a>
-    <a href="">heroku</a>
-    <a href="">heroku</a>
-    <a href="">heroku</a>
-    <a href="">heroku</a>
+    <div id="links">
+      <span>A deck of Cards with some easter egg games if you can find them:</span>
+      <a href="https://illenafnayr.github.io/Card-Game/">Deck of Cards</a>
+      <hr width="95%">
+      <span>A image sharing applicaiton that suggests images based on tags you like:</span>
+      <a href="https://damp-everglades-58234.herokuapp.com/">Toast</a>
+      <hr width="95%">
+      <span>An anoymous social media application. You must contribute to view the content:</span>
+      <a href="https://face-less.herokuapp.com/">Faceless</a>
+      <hr width="95%">
+      <span>An ecommerce platform for a Boston based Skateboard Company:</span>
+      <a href="https://shielded-journey-24875.herokuapp.com/">Corner Store Skateboard Co.</a>
+    </div>
   </div>
 </template>
 
@@ -62,7 +70,7 @@ export default {
 #portfolio-container {
   position: absolute;
   z-index: 10;
-  height: 31%;
+  height: 33%;
   width: 50%;
   border: 2px solid;
   background-color: rgb(192,192,192);
@@ -96,6 +104,15 @@ export default {
 
 .close:active{
     border-color: #808080  #FFFFFF  #FFFFFF #808080;
+}
+
+#links {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-evenly;
+  height: 92%;
+  border: 1px solid gold;
 }
 
 </style>

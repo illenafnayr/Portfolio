@@ -18,7 +18,7 @@ export default {
     NavBar
   },
   mounted() {
-    console.warn('this message will sefl destruct in 30s')
+    console.warn('this message will self destruct in 30s')
     setTimeout(() => {
       console.error('ka-boom!')
     }, 1000 *30)

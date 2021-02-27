@@ -1,9 +1,9 @@
 <template>
-  <div ref="draggableContainer" id="readMe-container">
-    <div id="readMe-header" @mousedown="dragMouseDown">
+  <div ref="draggableContainer" id="resumeIcon-container">
+    <div id="resumeIcon-header" @mousedown="dragMouseDown">
       <img src="../assets/Pin-sheet.png" alt="">
     </div>
-    <span id="readMeBody">README.txt</span>
+    <span id="resumeIconBody">Resume</span>
   </div>
 </template>
 
@@ -51,9 +51,9 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 
-#readMe-container {
+#resumeIcon-container {
   position: absolute;
-  left: 80%;
+  left: 70%;
   top: 15%;
   z-index: 9;
   font-family: 'VT323', monospace;
@@ -63,18 +63,18 @@ export default {
   cursor: pointer;
 }
 
-#readMe-container:active {
+#resumeIcon-container:active {
     background-color: blue;
     color: white;
 }
 
-#readMe-header {
+#resumeIcon-header {
   cursor:move;
   z-index: 10;
   color: white;
 }
 
-#readMeBody {
+#resumeIconBody {
     font-size: .85rem;
 }
 </style>
