@@ -9,7 +9,7 @@
       <a href="https://illenafnayr.github.io/Card-Game/">Deck of Cards</a>
       <hr width="95%">
       <span>A image sharing applicaiton that suggests images based on tags you like:</span>
-      <a href="https://damp-everglades-58234.herokuapp.com/">Toast</a>
+      <a href="https://toast-apples.herokuapp.com/">Toast</a>
       <hr width="95%">
       <span>An anoymous social media application. You must contribute to view the content:</span>
       <a href="https://face-less.herokuapp.com/">Faceless</a>
