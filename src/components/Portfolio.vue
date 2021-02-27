@@ -6,16 +6,16 @@
     </div>
     <div id="links">
       <span>A deck of Cards with some easter egg games if you can find them:</span>
-      <a href="https://illenafnayr.github.io/Card-Game/">Deck of Cards</a>
+      <a href="https://illenafnayr.github.io/Card-Game/" target="_blank">Deck of Cards</a>
       <hr width="95%">
       <span>A image sharing applicaiton that suggests images based on tags you like:</span>
-      <a href="https://toast-apples.herokuapp.com/">Toast</a>
+      <a href="https://toast-apples.herokuapp.com/" target="_blank">Toast</a>
       <hr width="95%">
       <span>An anoymous social media application. You must contribute to view the content:</span>
-      <a href="https://face-less.herokuapp.com/">Faceless</a>
+      <a href="https://face-less.herokuapp.com/" target="_blank">Faceless</a>
       <hr width="95%">
       <span>An ecommerce platform for a Boston based Skateboard Company:</span>
-      <a href="https://shielded-journey-24875.herokuapp.com/">Corner Store Skateboard Co.</a>
+      <a href="https://shielded-journey-24875.herokuapp.com/" target="_blank">Corner Store Skateboard Co.</a>
     </div>
   </div>
 </template>
