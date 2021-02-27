@@ -45,7 +45,7 @@
 
 <script>
 export default {
-  name: 'Resume',
+  name: 'Email',
   data: function () {
     return {
       positions: {
@@ -171,5 +171,34 @@ export default {
 
 .close:active{
     border-color: #808080  #FFFFFF  #FFFFFF #808080;
+}
+
+@media only screen and (max-width: 740px) {
+
+  #contact-container {
+    width: 95%;
+    left: 2.5%;
+  }
+
+   input{
+     width: 30%;
+   }
+
+   #send {
+     width: 32px;
+     height: 32px;
+     border: none;
+     margin-left: 0;
+   }
+
+   .metaDiv {
+     margin: 0;
+     width:120%
+   }
+
+   #text {
+     height: 200px;
+     width:80%;
+   }
 }
 </style>
