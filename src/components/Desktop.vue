@@ -1,7 +1,8 @@
 <template>
   <div id="desktop">
     <span id="title">Fanelli Studios</span>
-    <Email />
+    <EmailIcon v-on:dblclick="showEmail()"/>
+    <Email v-bind:style='{"display": (isActive? "block" : "none")}'/>
     <ResumeIcon v-on:dblclick="showResume()"/>
     <Resume v-bind:style='{"display": (isActive? "block" : "none")}' />
     <Portfolio v-bind:style='{"display": (isActive? "block" : "none")}' />
@@ -13,6 +14,7 @@
 
 <script>
 // @ is an alias to /src
+import EmailIcon from '@/components/EmailIcon.vue'
 import Email from '@/components/Email.vue'
 import ResumeIcon from '@/components/ResumeIcon.vue'
 import Resume from '@/components/Resume.vue'
@@ -24,6 +26,7 @@ import Portfolio from '@/components/Portfolio.vue'
 export default {
   name: 'Desktop',
   components: {
+    EmailIcon,
     Email,
     ReadMe,
     ResumeIcon,
@@ -51,6 +54,11 @@ export default {
     showResume() {
       if (document.querySelector('#resume-container').style.display === "none") {
         document.querySelector('#resume-container').style.display = "block"
+      }
+    },
+    showEmail() {
+      if (document.querySelector('#email-container').style.display === "none") {
+        document.querySelector('#email-container').style.display = "block"
       }
     }
   }

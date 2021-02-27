@@ -1,12 +1,12 @@
 <template>
-  <div ref="draggableContainer" id="contact-container">
-    <div id="contact-header" @mousedown="dragMouseDown">
+  <div ref="draggableContainer" id="email-container">
+    <div id="email-header" @mousedown="dragMouseDown">
       <span>E-mail</span>
       <div class="close" v-on:click="closeContact()">X</div>
     </div>
     <br>
-    <form action="https://mailthis.to/Ryan"
-        method="POST" encType="multipart/form-data" id="contactForm">
+    <form action="https://mailthis.to/Ryan Fanelli"
+        method="POST" encType="multipart/form-data" id="emailForm">
         <div id="emailMeta">
           <div id="metaContainer">
             <div class="metaDiv">
@@ -80,7 +80,7 @@ export default {
       document.onmousemove = null
     },
     closeContact () {
-      document.querySelector('#contact-container').style.display = 'none'
+      document.querySelector('#email-container').style.display = 'none'
     }
   }
 }
@@ -90,7 +90,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 
-#contact-container {
+#email-container {
   position: absolute;
   z-index: 10;
   height: 370px;
@@ -103,11 +103,11 @@ export default {
   overflow: auto;
   font-family: 'VT323', monospace;
   text-align:center;
-  /* display: none; */
+  display: none;
   top: 21%;
   left: 30%;
 }
-#contact-header {
+#email-header {
   cursor:move;
   z-index: 10;
   border: 1px solid black;
@@ -117,7 +117,7 @@ export default {
   justify-content: space-between;
 }
 
-#contactForm {
+#emailForm {
   display: flex;
   flex-direction: column;
 }
@@ -175,7 +175,7 @@ export default {
 
 @media only screen and (max-width: 740px) {
 
-  #contact-container {
+  #email-container {
     width: 95%;
     left: 2.5%;
   }

@@ -10,9 +10,9 @@
         <img src="../assets/Resume-Icon.png" alt="Portfolio" id="resumeIcon">
         <span>Projects</span>
       </div>
-      <div class="block" >
-        <img src="../assets/Mailbox-with-phone.png" alt="Portfolio" id="mailboxPhone">
-        <span>Contact</span>
+      <div class="block" v-on:click="showEmail()">
+        <img src="../assets/Mail.png" alt="Portfolio" id="mailboxPhone">
+        <span>Email</span>
       </div>
       <a class="block" href="https://github.com/illenafnayr" target="_blank">
         <div class="container">
@@ -52,6 +52,11 @@ export default {
     showPortfolio() {
       if (document.querySelector('#portfolio-container').style.display === "none") {
         document.querySelector('#portfolio-container').style.display = "block"
+      }
+    },
+    showEmail() {
+      if (document.querySelector('#email-container').style.display === "none") {
+        document.querySelector('#email-container').style.display = "block"
       }
     }
   }
