@@ -84,7 +84,7 @@ export default {
     },
     handleSubmit () {
       axios
-        .post('http://localhost:4321/', this.form)
+        .post('https://fanelliapi.herokuapp.com/', this.form)
         .then((response) => {
           console.log(response.data)
           document.querySelector('#emailForm').reset()
