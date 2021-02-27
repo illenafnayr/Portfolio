@@ -53,7 +53,7 @@ export default {
       showMenu() {
         //   document.getElementById('startMenu').style.display = 'block'
         this.isActive = !this.isActive
-      },
+      }
   }
 }
 </script>

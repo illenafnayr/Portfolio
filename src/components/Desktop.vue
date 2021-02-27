@@ -2,7 +2,7 @@
   <div id="desktop">
     <span id="title">Fanelli Studios</span>
     <EmailIcon v-on:dblclick="showEmail()"/>
-    <Email v-bind:style='{"display": (isActive? "block" : "none")}'/>
+    <Email />
     <ResumeIcon v-on:dblclick="showResume()"/>
     <Resume v-bind:style='{"display": (isActive? "block" : "none")}' />
     <Portfolio v-bind:style='{"display": (isActive? "block" : "none")}' />
@@ -57,9 +57,7 @@ export default {
       }
     },
     showEmail() {
-      if (document.querySelector('#email-container').style.display === "none") {
         document.querySelector('#email-container').style.display = "block"
-      }
     }
   }
 }

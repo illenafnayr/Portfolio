@@ -5,8 +5,7 @@
       <div class="close" v-on:click="closeContact()">X</div>
     </div>
     <br>
-    <form action="https://mailthis.to/Ryan Fanelli"
-        method="POST" encType="multipart/form-data" id="emailForm">
+    <form v-on:submit.prevent="handleSubmit()" encType="multipart/form-data" id="emailForm">
         <div id="emailMeta">
           <div id="metaContainer">
             <div class="metaDiv">
@@ -16,12 +15,12 @@
 
             <div class="metaDiv">
               <label for="email">Cc: </label>
-              <input  id="email" type="email" name="_replyto" placeholder="Your E-mail address"><br>
+              <input  id="email" type="email" name="email" placeholder="Your E-mail address" v-model="form.email"><br>
             </div>
 
             <div>
               <label for="subject">Subject: </label>
-              <input type="text" name="subject" id="subject"><br>
+              <input type="text" name="subject" id="subject" v-model="form.subject"><br>
             </div>
           </div>
           <button type="submit" id="send">
@@ -31,19 +30,15 @@
         </div>
         <br>
         <div id="emailBody">
-          <textarea name="message" id="text"></textarea><br>
-          <input type="file" name="file" placeholder="Attachments (optional)"><br>
-          <input type="hidden" name="_subject" value="Contact form submitted">
-          <input type="hidden" name="_after" value="https://myhomepage.net/">
-          <input type="hidden" name="_honeypot" value="">
-          <input type="hidden" name="_confirmation" value="">
+          <textarea name="message" id="text" v-model="form.message" ></textarea><br>
         </div>
-
     </form>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'Email',
   data: function () {
@@ -53,6 +48,11 @@ export default {
         clientY: undefined,
         movementX: 0,
         movementY: 0,
+      },
+      form: {
+        email: '',
+        subject: '',
+        message: ''
       }
     }
   },
@@ -81,6 +81,15 @@ export default {
     },
     closeContact () {
       document.querySelector('#email-container').style.display = 'none'
+    },
+    handleSubmit () {
+      axios
+        .post('http://localhost:4321/', this.form)
+        .then((response) => {
+          console.log(response.data)
+          document.querySelector('#emailForm').reset()
+          document.querySelector('#name').value = "illenafnayr@gmail.com"
+        })
     }
   }
 }
