@@ -92,7 +92,7 @@ export default {
           listOfCommands[i].style.display = "none"
         }
         document.querySelector('#command').value = ''
-        document.querySelector('#kitty').style.display = "block"
+        document.querySelector('#kitty-container').style.display = "flex"
       }
       if (document.querySelector('#command').value == 'exit catmode') {
         let listOfCommands = document.querySelectorAll('.listOfCommands')
@@ -100,7 +100,7 @@ export default {
           listOfCommands[i].style.display = "none"
         }
         document.querySelector('#command').value = ''
-        document.querySelector('#kitty').style.display = "none"
+        document.querySelector('#kitty-container').style.display = "none"
       }
     }
   }
