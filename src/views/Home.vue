@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <CyanCat />
     <Desktop />
     <NavBar />
   </div>
@@ -9,11 +10,13 @@
 // @ is an alias to /src
 import Desktop from '@/components/Desktop.vue'
 import NavBar from '@/components/NavBar.vue'
+import CyanCat from '@/components/CyanCat.vue'
 
 
 export default {
   name: 'Home',
   components: {
+    CyanCat,
     Desktop,
     NavBar
   },
@@ -27,5 +30,8 @@ export default {
 </script>
 
 <style>
-  
+  body {
+  margin: 0;
+  background-color: rgb(3,128,131)
+}
 </style>

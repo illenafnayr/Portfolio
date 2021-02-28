@@ -8,6 +8,7 @@
     <p class="listOfCommands" >type 'email' - open email application</p>
     <p class="listOfCommands" >type 'portfolio' to view portfolio</p>
     <p class="listOfCommands" >type 'resume' to open resume</p>
+    <p class="listOfCommands" >type 'catmode' to initialize cat mode ('exit catmode' to turn off)</p>
   </div>
 </template>
 
@@ -84,6 +85,22 @@ export default {
         }
         document.querySelector('#command').value = ''
         document.querySelector('#resume-container').style.display = "block"
+      }
+      if (document.querySelector('#command').value == 'catmode') {
+        let listOfCommands = document.querySelectorAll('.listOfCommands')
+        for (let i = 0; i < listOfCommands.length; i++) {
+          listOfCommands[i].style.display = "none"
+        }
+        document.querySelector('#command').value = ''
+        document.querySelector('#kitty').style.display = "block"
+      }
+      if (document.querySelector('#command').value == 'exit catmode') {
+        let listOfCommands = document.querySelectorAll('.listOfCommands')
+        for (let i = 0; i < listOfCommands.length; i++) {
+          listOfCommands[i].style.display = "none"
+        }
+        document.querySelector('#command').value = ''
+        document.querySelector('#kitty').style.display = "none"
       }
     }
   }
