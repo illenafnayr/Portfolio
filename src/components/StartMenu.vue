@@ -59,6 +59,9 @@ export default {
     },
     showCLI() {
         document.querySelector('#cli-container').style.display = "block"
+        let input = document.querySelector('#command');
+        input.focus();
+        input.select();
     }
   }
 }

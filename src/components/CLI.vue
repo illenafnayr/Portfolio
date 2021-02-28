@@ -4,7 +4,10 @@
       <span>command prompt</span>
       <div class="close" v-on:click="closeCLI()">X</div>
     </div>
-    <span id="cmds">C: _/></span><input type="text" name="command" id="command">
+    <span id="cmds">C: _/></span><input type="text" name="command" id="command" @change="ls()" placeholder="type 'ls' to see a list of commands">
+    <p class="listOfCommands" >type 'email' - open email application</p>
+    <p class="listOfCommands" >type 'portfolio' to view portfolio</p>
+    <p class="listOfCommands" >type 'resume' to open resume</p>
   </div>
 </template>
 
@@ -20,13 +23,6 @@ export default {
         movementY: 0,
       }
     }
-  },
-  mounted() {
-    console.log('asdf')
-    let input = document.querySelector('#command');
-    input.focus();
-  input.select();
-
   },
   methods: {
     dragMouseDown: function (event) {
@@ -53,6 +49,42 @@ export default {
     },
     closeCLI () {
       document.querySelector('#cli-container').style.display = 'none'
+    },
+    getInputValue() {
+      document.querySelector('#command')
+    },
+    ls() {
+      if (document.querySelector('#command').value == 'ls') {
+        let listOfCommands = document.querySelectorAll('.listOfCommands')
+        for (let i = 0; i < listOfCommands.length; i++) {
+          listOfCommands[i].style.display = "block"
+        }
+        document.querySelector('#command').value = ''
+      }
+      if (document.querySelector('#command').value == 'email') {
+        let listOfCommands = document.querySelectorAll('.listOfCommands')
+        for (let i = 0; i < listOfCommands.length; i++) {
+          listOfCommands[i].style.display = "none"
+        }
+        document.querySelector('#command').value = ''
+        document.querySelector('#email-container').style.display = "block"
+      }
+      if (document.querySelector('#command').value == 'portfolio') {
+        let listOfCommands = document.querySelectorAll('.listOfCommands')
+        for (let i = 0; i < listOfCommands.length; i++) {
+          listOfCommands[i].style.display = "none"
+        }
+        document.querySelector('#command').value = ''
+        document.querySelector('#portfolio-container').style.display = "block"
+      }
+      if (document.querySelector('#command').value == 'resume') {
+        let listOfCommands = document.querySelectorAll('.listOfCommands')
+        for (let i = 0; i < listOfCommands.length; i++) {
+          listOfCommands[i].style.display = "none"
+        }
+        document.querySelector('#command').value = ''
+        document.querySelector('#resume-container').style.display = "block"
+      }
     }
   }
 }
@@ -109,7 +141,11 @@ export default {
   color: white;
   font-family: 'VT323', monospace;
   outline: none;
-  
+  width: 195px;
+}
+
+.listOfCommands {
+  display: none;
 }
 
 
