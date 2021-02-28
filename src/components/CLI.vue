@@ -1,24 +1,32 @@
 <template>
-  <div ref="draggableContainer" id="readMe-container">
-    <div id="readMe-header" @mousedown="dragMouseDown">
-      <img src="../assets/Pin-sheet.png" alt="">
+  <div ref="draggableContainer" id="cli-container">
+    <div id="cli-header" @mousedown="dragMouseDown">
+      <span>command prompt</span>
+      <div class="close" v-on:click="closeCLI()">X</div>
     </div>
-    <span id="readMeBody">README.txt</span>
+    <span id="cmds">C: _/></span><input type="text" name="command" id="command">
   </div>
 </template>
 
 <script>
 export default {
-  name: 'ReadMe',
+  name: 'CLI',
   data: function () {
     return {
       positions: {
         clientX: undefined,
         clientY: undefined,
         movementX: 0,
-        movementY: 0
+        movementY: 0,
       }
     }
+  },
+  mounted() {
+    console.log('asdf')
+    let input = document.querySelector('#command');
+    input.focus();
+  input.select();
+
   },
   methods: {
     dragMouseDown: function (event) {
@@ -28,9 +36,6 @@ export default {
       this.positions.clientY = event.clientY
       document.onmousemove = this.elementDrag
       document.onmouseup = this.closeDragElement
-
-      // document.ontouchmove = this.elementDrag
-      // document.ontouchcancel = this.closeDragElement
     },
     elementDrag: function (event) {
       event.preventDefault()
@@ -45,9 +50,9 @@ export default {
     closeDragElement () {
       document.onmouseup = null
       document.onmousemove = null
-
-      // document.ontouchend = null
-      // document.ontouchmove = null
+    },
+    closeCLI () {
+      document.querySelector('#cli-container').style.display = 'none'
     }
   }
 }
@@ -57,30 +62,55 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 
-#readMe-container {
+#cli-container {
   position: absolute;
-  left: 80%;
-  top: 15%;
-  z-index: 9;
+  z-index: 10;
+  height: 31%;
+  width: 50%;
+  border: 2px solid;
+  background-color: black;
+  border-width:1px;
+  border-color:#FFFFFF #808080 #808080 #FFFFFF;
+  resize: both;
+  overflow: auto;
   font-family: 'VT323', monospace;
-  text-align:center;
-  margin: 0%;
-  padding: 0%;
-  cursor: pointer;
+  /* text-align:center; */
+  display: none;
+  color: #FFFFFF;
+  top: 25%;
+  left: 25%;
 }
-
-#readMe-container:active {
-    background-color: blue;
-    color: white;
-}
-
-#readMe-header {
+#cli-header {
   cursor:move;
   z-index: 10;
+  border: 1px solid black;
   color: white;
+  background-image: linear-gradient(90deg, rgb(0,0,123), black);
+  display: flex;
+  justify-content: space-between;
 }
 
-#readMeBody {
-    font-size: .85rem;
+.close {
+  border: 1px solid;
+  border-width:1px;
+  border-color:#FFFFFF #808080 #808080 #FFFFFF;
+  background-color: rgb(192,192,192);
+  width: 3%;
+  text-align: center;
 }
+
+.close:active{
+    border-color: #808080  #FFFFFF  #FFFFFF #808080;
+}
+
+#command {
+  background-color: black;
+  border: none;
+  color: white;
+  font-family: 'VT323', monospace;
+  outline: none;
+  
+}
+
+
 </style>

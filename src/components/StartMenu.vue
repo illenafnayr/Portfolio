@@ -6,9 +6,9 @@
   </div>
 
   <div id="appList">
-      <div class="block" >
-        <img src="../assets/Resume-Icon.png" alt="Portfolio" id="resumeIcon">
-        <span>Projects</span>
+      <div class="block" v-on:click="showCLI()" >
+        <img src="../assets/cli.png" alt="Portfolio" id="resumeIcon">
+        <span>CMD Prompt</span>
       </div>
       <div class="block" v-on:click="showEmail()">
         <img src="../assets/Mail.png" alt="Portfolio" id="mailboxPhone">
@@ -55,9 +55,10 @@ export default {
       }
     },
     showEmail() {
-      if (document.querySelector('#email-container').style.display === "none") {
         document.querySelector('#email-container').style.display = "block"
-      }
+    },
+    showCLI() {
+        document.querySelector('#cli-container').style.display = "block"
     }
   }
 }
@@ -189,6 +190,4 @@ img {
   margin-left: 2.5%;
   margin-right: 1.75%;
 }
-
-
 </style>

@@ -1,6 +1,7 @@
 <template>
   <div id="desktop">
-    <span id="title">Fanelli Studios</span>
+    <span id="title">Studio Fanelli</span>
+    <CLI />
     <EmailIcon v-on:dblclick="showEmail()"/>
     <Email />
     <ResumeIcon v-on:dblclick="showResume()"/>
@@ -14,6 +15,7 @@
 
 <script>
 // @ is an alias to /src
+import CLI from '@/components/CLI.vue'
 import EmailIcon from '@/components/EmailIcon.vue'
 import Email from '@/components/Email.vue'
 import ResumeIcon from '@/components/ResumeIcon.vue'
@@ -26,6 +28,7 @@ import Portfolio from '@/components/Portfolio.vue'
 export default {
   name: 'Desktop',
   components: {
+    CLI,
     EmailIcon,
     Email,
     ReadMe,
