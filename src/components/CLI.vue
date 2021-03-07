@@ -55,14 +55,14 @@ export default {
       document.querySelector('#command')
     },
     ls() {
-      if (document.querySelector('#command').value == 'ls') {
+      if (document.querySelector('#command').value.toLowerCase() == 'ls') {
         let listOfCommands = document.querySelectorAll('.listOfCommands')
         for (let i = 0; i < listOfCommands.length; i++) {
           listOfCommands[i].style.display = "block"
         }
         document.querySelector('#command').value = ''
       }
-      if (document.querySelector('#command').value == 'email') {
+      if (document.querySelector('#command').value.toLowerCase() == 'email') {
         let listOfCommands = document.querySelectorAll('.listOfCommands')
         for (let i = 0; i < listOfCommands.length; i++) {
           listOfCommands[i].style.display = "none"
@@ -70,7 +70,7 @@ export default {
         document.querySelector('#command').value = ''
         document.querySelector('#email-container').style.display = "block"
       }
-      if (document.querySelector('#command').value == 'portfolio') {
+      if (document.querySelector('#command').value.toLowerCase() == 'portfolio') {
         let listOfCommands = document.querySelectorAll('.listOfCommands')
         for (let i = 0; i < listOfCommands.length; i++) {
           listOfCommands[i].style.display = "none"
@@ -78,7 +78,7 @@ export default {
         document.querySelector('#command').value = ''
         document.querySelector('#portfolio-container').style.display = "block"
       }
-      if (document.querySelector('#command').value == 'resume') {
+      if (document.querySelector('#command').value.toLowerCase() == 'resume') {
         let listOfCommands = document.querySelectorAll('.listOfCommands')
         for (let i = 0; i < listOfCommands.length; i++) {
           listOfCommands[i].style.display = "none"
@@ -86,7 +86,7 @@ export default {
         document.querySelector('#command').value = ''
         document.querySelector('#resume-container').style.display = "block"
       }
-      if (document.querySelector('#command').value == 'catmode') {
+      if (document.querySelector('#command').value.toLowerCase() == 'catmode') {
         let listOfCommands = document.querySelectorAll('.listOfCommands')
         for (let i = 0; i < listOfCommands.length; i++) {
           listOfCommands[i].style.display = "none"
@@ -94,7 +94,7 @@ export default {
         document.querySelector('#command').value = ''
         document.querySelector('#kitty-container').style.display = "flex"
       }
-      if (document.querySelector('#command').value == 'exit catmode') {
+      if (document.querySelector('#command').value.toLowerCase() == 'exit catmode') {
         let listOfCommands = document.querySelectorAll('.listOfCommands')
         for (let i = 0; i < listOfCommands.length; i++) {
           listOfCommands[i].style.display = "none"

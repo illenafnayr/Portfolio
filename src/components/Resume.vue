@@ -6,7 +6,7 @@
     </div>
     <!-- <iframe src="https://drive.google.com/file/d/1KP3j4HTnb6PT7QXT_49KP7CdftAgPvc7/preview" width="640" height="480"></iframe> -->
     <div id="resumeBody">
-      <span><a href="https://docs.google.com/document/d/1HC395Lwld-MCwlSDf75lkga1hZoJFETzk1aOZK7pJr0/edit">( click for a more formal .pdf version)</a></span>
+      <span><a href="https://docs.google.com/document/d/1HC395Lwld-MCwlSDf75lkga1hZoJFETzk1aOZK7pJr0/edit" target="_blank">( click for a more formal .pdf version)</a></span>
       <img src="../assets/me.jpeg" alt="My Smiling Face" id="myFace">
       <h3>Ryan Fanelli</h3>
       <span class="bold">Full-Stack Software Engineer</span>
@@ -37,7 +37,7 @@
       <div id="projects">
         <span class="bold">Projects</span>
         <div class="project">
-          <span class="bold"><a href="Utilizes responsive design and a complex user interface.">Deck of Cards</a></span>
+          <span class="bold"><a href="https://illenafnayr.github.io/Card-Game/" target="_blank">Deck of Cards</a></span>
           <ul>
             <li>Displays fundamental understanding of JavaScript in a strictly client-side setting.</li>
             <li>Uses JavaScript, HTML5, JQuery and Ajax to make requests to a third party API.</li>
@@ -45,7 +45,7 @@
           </ul>
         </div>
         <div class="project">
-          <span class="bold"><a href="https://illenafnayr.github.io/Card-Game/">Toast</a></span>
+          <span class="bold"><a href="https://toast-apples.herokuapp.com/" target="_blank">Toast</a></span>
           <ul>
             <li>Full-stack application that stores unique user data including encrypted passwords.</li>
             <li>Built using NodeJS, ExpressJS, MongoDB/Mongoose for server-side scripting.</li>
@@ -53,7 +53,7 @@
           </ul>
         </div>
         <div class="project">
-          <span class="bold"><a href="https://face-less.herokuapp.com/">Faceless</a></span>
+          <span class="bold"><a href="https://face-less.herokuapp.com/" target="_blank">Faceless</a></span>
           <ul>
             <li>Full-stack single page application using a ReactJs front-end.</li>
             <li>Built using NodeJS, ExpressJS, MongoDB/Mongoose for server-side scripting.</li>
@@ -61,7 +61,7 @@
           </ul>
         </div>
         <div class="project">
-          <span class="bold"><a href="https://github.com/SustainableCities">Sustainable Cities hackathon</a></span>
+          <span class="bold"><a href="https://github.com/SustainableCities" target="_blank">Sustainable Cities hackathon</a></span>
           <ul>
             <li>Three day collaboration with a data scientist, UX/UI designers and a development team.</li>
             <li>React application, with an express server. Maps a CSV file (created from an array public data resources, handed over from data scientist) to usable REST API using Sequelize</li>
@@ -69,7 +69,7 @@
           </ul>
         </div>
         <div class="project">
-          <span class="bold"><a href="https://github.com/SustainableCities">Corner Store Skateboard Co.</a></span>
+          <span class="bold"><a href="https://github.com/SustainableCities" target="_blank">Corner Store Skateboard Co.</a></span>
           <ul>
             <li>Extensive mySQL database and mapped to a REST API using Sequelize and ExpressJs </li>
             <li>VueJs Front end with vue router</li>

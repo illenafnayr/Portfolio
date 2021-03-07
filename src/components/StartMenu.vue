@@ -35,7 +35,7 @@
         <img src="../assets/Starfield.png" alt="Portfolio" id="suspend">
         <span>Suspend</span>
       </div>
-      <a href="https:www.google.com" class="block">
+      <a href="https://www.google.com" class="block">
       <div class="container" >
         <img src="../assets/Power-down.png" alt="Portfolio" id="powerDown">
         <span>Shut Down</span>
