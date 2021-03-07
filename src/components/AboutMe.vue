@@ -4,7 +4,7 @@
       <span>About Me</span>
       <div class="close" v-on:click="closeAboutMe()">X</div>
     </div>
-    <p>Not only a dedicated software engineer with a passion for knowledge and creativity, but also an innovative problem solver with keen observation skills. An amicable person that will inspire confidence and curiosity amongst a team. I deliver performance driven by efficiency and adaptability. </p>
+    <p id="blurb">Not only a dedicated software engineer with a passion for knowledge and creativity, but also an innovative problem solver with keen observation skills. An amicable person that will inspire confidence and curiosity amongst a team. I deliver performance driven by efficiency and adaptability. </p>
   </div>
 </template>
 
@@ -58,17 +58,19 @@ export default {
 #draggable-container {
   position: absolute;
   z-index: 10;
-  height: 31%;
-  width: 50%;
+  height: 13.17rem;
+  width: 25%;
   border: 2px solid;
   background-color: rgb(192,192,192);
   border-width:1px;
   border-color:#FFFFFF #808080 #808080 #FFFFFF;
   resize: both;
-  /* overflow: auto; */
+  overflow: auto;
   font-family: 'VT323', monospace;
   text-align:center;
   display: none;
+  justify-content: center;
+  align-items: center;
   top: 25%;
   left: 25%;
 }
@@ -92,6 +94,10 @@ export default {
 
 .close:active{
     border-color: #808080  #FFFFFF  #FFFFFF #808080;
+}
+
+#blurb {
+  margin: 6.5%;
 }
 
 </style>

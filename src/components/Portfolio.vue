@@ -8,7 +8,7 @@
       <span>A deck of Cards with some easter egg games if you can find them:</span>
       <a href="https://illenafnayr.github.io/Card-Game/" target="_blank">Deck of Cards</a>
       <hr width="95%">
-      <span>A image sharing applicaiton that suggests images based on tags you like:</span>
+      <span>A image sharing application that suggests images based on tags you like:</span>
       <a href="https://toast-apples.herokuapp.com/" target="_blank">Toast</a>
       <hr width="95%">
       <span>An anoymous social media application. You must contribute to view the content:</span>
