@@ -65,7 +65,7 @@ export default {
   border-width:1px;
   border-color:#FFFFFF #808080 #808080 #FFFFFF;
   resize: both;
-  overflow: auto;
+  /* overflow: auto; */
   font-family: 'VT323', monospace;
   text-align:center;
   display: none;

@@ -77,7 +77,7 @@ export default {
   border-width:1px;
   border-color:#FFFFFF #808080 #808080 #FFFFFF;
   resize: both;
-  overflow: auto;
+  overflow: hidden;
   font-family: 'VT323', monospace;
   text-align:center;
   display: none;
@@ -111,8 +111,9 @@ export default {
   flex-direction: column;
   align-content: center;
   justify-content: space-evenly;
-  height: 92%;
-  border: 1px solid gold;
+  height: 90%;
+  /* border: 1px solid gold; */
+  overflow: auto;
 }
 
 </style>

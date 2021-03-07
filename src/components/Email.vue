@@ -87,6 +87,7 @@ export default {
         .post('https://fanelliapi.herokuapp.com/', this.form)
         .then((response) => {
           console.log(response.data)
+          alert('Your message has been sent!')
           document.querySelector('#emailForm').reset()
           document.querySelector('#name').value = "illenafnayr@gmail.com"
         })

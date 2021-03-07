@@ -1,12 +1,13 @@
 <template>
-<div id="kitty-container">
-  <img src="../assets/cyancat.gif" alt="not my problem, it's yours" id="kitty">
-</div>
+  <div id="kitty-container">
+    <img src="../assets/cyancat.gif" alt="not my problem, it's yours" id="kitty">
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'CyanCat'
+  name: 'CyanCat',
+
 }
 </script>
 
