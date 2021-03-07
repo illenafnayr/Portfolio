@@ -11,9 +11,9 @@
       <h4>Full-Stack Software Engineer</h4>
       <h5>(802)-777-3409</h5>
       <div>
-        <span class="contact"><a href="https://www.linkedin.com/in/ryan-fanelli/">LinkedIn</a></span>
+        <span class="contact"><a href="https://www.linkedin.com/in/ryan-fanelli/" target="_blank">LinkedIn</a></span>
         <span class="contact"><a href = "mailto: illenafnayr@gmail.com">illenafnayr@gmail.com</a></span>
-        <span class="contact"><a href="https://github.com/illenafnayr">GitHub</a></span>
+        <span class="contact"><a href="https://github.com/illenafnayr" target="_blank">GitHub</a></span>
       </div>
       <div id="stack">
         <img class="tech-logo" src="../assets/react.png" alt="react">
@@ -28,13 +28,99 @@
       <hr style="width: 95%">
       <div id="skills">
         <span class="bold">Skills</span>
-          <div id="frontend"><span class="bold">Frontend: </span>VueJs, ReactJS, EJS, CSS3, Bootstrap, CSS Flexbox / Grid, SASS, HTML, vanilla JavaScript</div>
-          <div id="backend"><span class="bold">Backend: </span>NodeJS, MongoDB/Mongoose, ExpressJS, PostgreSQL, MySQL, Sequelize, Ruby on Rails</div>
-          <div id="technologies"><span class="bold">Technologies: </span>R programming language, Git/GitHub, Google Maps API, Google GeoCoder, TypeScript, JQuery, DataGrip, DbDesign</div>
-          <hr style="width: 95%">
+        <div id="frontend"><span class="bold">Frontend: </span>VueJs, ReactJS, EJS, CSS3, Bootstrap, CSS Flexbox / Grid, SASS, HTML, vanilla JavaScript</div>
+        <div id="backend"><span class="bold">Backend: </span>NodeJS, MongoDB/Mongoose, ExpressJS, PostgreSQL, MySQL, Sequelize, Ruby on Rails</div>
+        <div id="technologies"><span class="bold">Technologies: </span>R programming language, Git/GitHub, Google Maps API, Google GeoCoder, TypeScript, JQuery, DataGrip, DbDesign</div>
       </div>
+      <hr style="width: 95%">
+      <div id="projects">
+        <span class="bold">Projects</span>
+        <div class="project">
+          <span class="bold"><a href="Utilizes responsive design and a complex user interface.">Deck of Cards</a></span>
+          <ul>
+            <li>Displays fundamental understanding of JavaScript in a strictly client-side setting.</li>
+            <li>Uses JavaScript, HTML5, JQuery and Ajax to make requests to a third party API.</li>
+            <li>Utilizes responsive design and a complex user interface.</li>
+          </ul>
+        </div>
+        <div class="project">
+          <span class="bold"><a href="https://illenafnayr.github.io/Card-Game/">Toast</a></span>
+          <ul>
+            <li>Full-stack application that stores unique user data including encrypted passwords.</li>
+            <li>Built using NodeJS, ExpressJS, MongoDB/Mongoose for server-side scripting.</li>
+            <li>Embedded JavaScript as a template engine, JavaScript, JQuery and CSS for client-side scripting.</li>
+          </ul>
+        </div>
+        <div class="project">
+          <span class="bold"><a href="https://face-less.herokuapp.com/">Faceless</a></span>
+          <ul>
+            <li>Full-stack single page application using a ReactJs front-end.</li>
+            <li>Built using NodeJS, ExpressJS, MongoDB/Mongoose for server-side scripting.</li>
+            <li>Partner project. GitHub for version control, Trello for project management.</li>
+          </ul>
+        </div>
+        <div class="project">
+          <span class="bold"><a href="https://github.com/SustainableCities">Sustainable Cities hackathon</a></span>
+          <ul>
+            <li>Three day collaboration with a data scientist, UX/UI designers and a development team.</li>
+            <li>React application, with an express server. Maps a CSV file (created from an array public data resources, handed over from data scientist) to usable REST API using Sequelize</li>
+            <li>To be continued in the future...</li>
+          </ul>
+        </div>
+        <div class="project">
+          <span class="bold"><a href="https://github.com/SustainableCities">Corner Store Skateboard Co.</a></span>
+          <ul>
+            <li>Extensive mySQL database and mapped to a REST API using Sequelize and ExpressJs </li>
+            <li>VueJs Front end with vue router</li>
+            <li>Currently under the hands of a UX/UI designer for a makeover and will implement stripe API to process payments</li>
+          </ul>
+        </div>         
+      </div>
+      <hr style="width: 95%">
+      <div>
+        <span class="bold">Experience</span>
+        <div>
+          <div class="project" id="experience">
+            <span class="bold">Research Assistant - Woodhams Lab // January ‘19 to January ‘20</span>
+            <ul>
+              <li>Conducted experiments, statistically analyzed field data to help cure global amphibian pathogens.</li>
+              <li>Audited a course in R programming language.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="project" id="experience">
+          <span class="bold">Guitar/Synthesizer/Sound Design - Andrew Alden Ensemble // 2014 - 2016</span>
+          <ul>
+            <li>Circuit-bent synthesizers and digitally manipulated audio data to create unique sounds.</li>
+            <li>Produced textual scores for film and performs them in front of a live audience to transform the picture with new sounds and experiences.</li>
+          </ul>
+        </div>
+      </div>
+      <hr style="width: 95%">
+      <div id="education">
+        <span class="bold">Education</span>
+        <div class="project">
+          <span class="bold">General Assembly - Software Engineering Immersive Course</span>
+          <ul>
+            <li>Full-time, 500+ hour Software Engineering Immersive program covering HTML, CSS, JavaScript, ReactJS, Node, MongoDB/Mongoose, Express, SQL, Ruby on Rails</li>
+            <li>Completed coursework and projects using front-end development, full-stack development, front-end frameworks, and APIs.</li>
+          </ul>
+        </div>
+        <div class="project">
+          <span class="bold">University of Massachusetts Boston - Biochemistry</span>
+          <ul>
+            <li>136 credits toward Bachelor of Science</li>
+          </ul>
+        </div>
+        <div class="project">
+          <span class="bold">Berklee College of Music - Jazz Composition</span>
+          <ul>
+            <li>94 credits out of 120 toward Bachelor of Music</li>
+          </ul>
+        </div>        
+      </div>
+      <hr style="width: 95%">
     </div>
-
   </div>
 </template>
 
@@ -89,7 +175,7 @@ export default {
   position: absolute;
   z-index: 10;
   height: 55%;
-  /* width: fit-content; */
+  width: 50%;
   border: 2px solid;
   background-color: rgb(192,192,192);
   border-width:1px;
@@ -127,8 +213,9 @@ export default {
 
 
 #resumeBody {
-  height: 100%;
-  /* width: 100%; */
+  height: 95%;
+  width: 100%;
+  /* border: 1px solid gold; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -159,5 +246,13 @@ export default {
 
 .bold {
   font-weight: 600;
+}
+
+.project {
+  text-align: left;
+}
+
+#experience {
+  margin-top: 2.5%;
 }
 </style>
