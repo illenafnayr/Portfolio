@@ -6,10 +6,11 @@
     </div>
     <!-- <iframe src="https://drive.google.com/file/d/1KP3j4HTnb6PT7QXT_49KP7CdftAgPvc7/preview" width="640" height="480"></iframe> -->
     <div id="resumeBody">
+      <span><a href="https://docs.google.com/document/d/1HC395Lwld-MCwlSDf75lkga1hZoJFETzk1aOZK7pJr0/edit">( click for a more formal .pdf version)</a></span>
       <img src="../assets/me.jpeg" alt="My Smiling Face" id="myFace">
       <h3>Ryan Fanelli</h3>
-      <h4>Full-Stack Software Engineer</h4>
-      <h5>(802)-777-3409</h5>
+      <span class="bold">Full-Stack Software Engineer</span>
+      <span class="bold">(802)-777-3409</span>
       <div>
         <span class="contact"><a href="https://www.linkedin.com/in/ryan-fanelli/" target="_blank">LinkedIn</a></span>
         <span class="contact"><a href = "mailto: illenafnayr@gmail.com">illenafnayr@gmail.com</a></span>

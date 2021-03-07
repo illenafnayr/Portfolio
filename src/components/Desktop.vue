@@ -1,6 +1,7 @@
 <template>
   <div id="desktop">
     <span id="title">Studio Fanelli</span>
+    <CLIIcon v-on:dblclick="showCli()"/>
     <CLI />
     <EmailIcon v-on:dblclick="showEmail()"/>
     <Email />
@@ -15,6 +16,7 @@
 
 <script>
 // @ is an alias to /src
+import CLIIcon from '@/components/CLIIcon.vue'
 import CLI from '@/components/CLI.vue'
 import EmailIcon from '@/components/EmailIcon.vue'
 import Email from '@/components/Email.vue'
@@ -28,6 +30,7 @@ import Portfolio from '@/components/Portfolio.vue'
 export default {
   name: 'Desktop',
   components: {
+    CLIIcon,
     CLI,
     EmailIcon,
     Email,
@@ -61,7 +64,10 @@ export default {
     },
     showEmail() {
         document.querySelector('#email-container').style.display = "block"
-    }
+    },
+    showCli() {
+        document.querySelector('#cli-container').style.display = "block"
+    }    
   }
 }
 </script>
