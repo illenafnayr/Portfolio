@@ -58,8 +58,8 @@ export default {
 #draggable-container {
   position: absolute;
   z-index: 10;
-  height: 13.17rem;
-  width: 25%;
+  height: 12.42rem;
+  width: 16rem;
   border: 2px solid;
   background-color: rgb(192,192,192);
   border-width:1px;

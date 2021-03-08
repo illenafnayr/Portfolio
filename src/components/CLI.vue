@@ -116,6 +116,7 @@ export default {
   z-index: 10;
   height: 31%;
   width: 50%;
+  max-width: 600px;
   border: 2px solid;
   background-color: black;
   border-width:1px;

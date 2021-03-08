@@ -1,15 +1,15 @@
 <template>
   <div id="desktop">
     <span id="title">Studio Fanelli</span>
-    <CLIIcon v-on:dblclick="showCli()"/>
+    <CLIIcon v-on:dblclick="showCli()" @touchend="showCli()"/>
     <CLI />
-    <EmailIcon v-on:dblclick="showEmail()"/>
+    <EmailIcon v-on:dblclick="showEmail()" @touchend="showEmail()"/>
     <Email />
-    <ResumeIcon v-on:dblclick="showResume()"/>
+    <ResumeIcon v-on:dblclick="showResume()" @touchend="showResume()"/>
     <Resume v-bind:style='{"display": (isActive? "block" : "none")}' />
     <Portfolio v-bind:style='{"display": (isActive? "block" : "none")}' />
-    <PortfolioIcon v-on:dblclick="showPortfolio()" />
-    <ReadMe v-on:dblclick="showAboutMe()"/>
+    <PortfolioIcon v-on:dblclick="showPortfolio()" @touchend="showPortfolio()"/>
+    <ReadMe v-on:dblclick="showAboutMe()" @touchend="showAboutMe()"/>
     <AboutMe v-bind:style='{"display": (isActive? "block" : "none")}'/>
   </div>
 </template>

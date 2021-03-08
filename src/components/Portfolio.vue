@@ -16,6 +16,14 @@
       <hr width="95%">
       <span>An ecommerce platform for a Boston based Skateboard Company:</span>
       <a href="https://shielded-journey-24875.herokuapp.com/" target="_blank">Corner Store Skateboard Co.</a>
+      <hr width="95%">
+      <span>Sustainable Cities Hackathon - A 3 day collab between a UX/UI team, a developmetn team and a data scientist</span>
+      <a href="https://docs.google.com/presentation/d/1UX7DrJ_IN2ToGuMDl_pClget2u2lVH3yIit7rglrfAc/edit?usp=sharing" target="_blank">Slide Deck</a>
+      <a href="https://github.com/SustainableCities">Git Hub Repo</a>
+      <hr width="95%">
+      <span>A Stock Market Chart viewer, a failed collaboration with a UX/UI team where communication and team organization skills were put to the test, and a lot was learned. (The API's are very limited! 1 search per minute please!)</span>
+      <a href="https://hidden-woodland-01560.herokuapp.com/" target="_blank">A finance app</a>
+      <hr width="95%">
     </div>
   </div>
 </template>
@@ -70,8 +78,10 @@ export default {
 #portfolio-container {
   position: absolute;
   z-index: 10;
-  height: 33%;
+  height: auto;
   width: 50%;
+  max-width: 600px;
+  min-width: 300px;
   border: 2px solid;
   background-color: rgb(192,192,192);
   border-width:1px;
@@ -81,8 +91,8 @@ export default {
   font-family: 'VT323', monospace;
   text-align:center;
   display: none;
-  top: 21%;
-  left: 25%;
+  top: 5%;
+  left: 15%;
 }
 #portfolio-header {
   cursor:move;
@@ -114,6 +124,7 @@ export default {
   height: 90%;
   /* border: 1px solid gold; */
   overflow: auto;
+  padding: 5%;
 }
 
 </style>
