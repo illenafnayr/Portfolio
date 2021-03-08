@@ -69,7 +69,7 @@
           </ul>
         </div>
         <div class="project">
-          <span class="bold"><a href="https://github.com/SustainableCities" target="_blank">Corner Store Skateboard Co.</a></span>
+          <span class="bold"><a href="https://shielded-journey-24875.herokuapp.com/" target="_blank">Corner Store Skateboard Co.</a></span>
           <ul>
             <li>Extensive mySQL database and mapped to a REST API using Sequelize and ExpressJs </li>
             <li>VueJs Front end with vue router</li>
