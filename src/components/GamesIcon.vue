@@ -1,16 +1,16 @@
 <template>
-  <div ref="draggableContainer" id="cliIcon-container">
-    <div id="cliIcon-header" @mousedown="dragMouseDown">
-      <img src="../assets/cli.png" alt="">
+  <div ref="draggableContainer" id="gamesIcon-container">
+    <div id="gamesIcon-header" @mousedown="dragMouseDown">
+      <img src="../assets/DocumentsFolder.png" alt="">
     </div>
-    <span id="cliBody">CMD PROMPT</span>
+    <span id="gamesBody">Games!</span>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'CLIIcon',
-  data: function () {
+  name: 'GamesIcon',
+  data: () => {
     return {
       positions: {
         clientX: undefined,
@@ -52,10 +52,10 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 
-#cliIcon-container {
+#gamesIcon-container {
   position: absolute;
   left: 15%;
-  top: 30%;
+  top: 80%;
   z-index: 9;
   font-family: 'VT323', monospace;
   text-align:center;
@@ -63,18 +63,18 @@ export default {
   padding: 0%;
 }
 
-#cliIcon-container:active {
+#gamesIcon-container:active {
     background-color: blue;
     color: white;
 }
 
-#cliIcon-header {
+#gamesIcon-header {
   cursor:move;
   z-index: 10;
   color: white;
 }
 
-#cliIconBody {
+#gamesIconBody {
     font-size: .85rem;
 }
 </style>

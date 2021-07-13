@@ -10,7 +10,7 @@
 <script>
 export default {
   name: 'PortfolioIcon',
-  data: function () {
+  data: () => {
     return {
       positions: {
         clientX: undefined,
@@ -47,7 +47,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '../styles/global.scss';
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 
