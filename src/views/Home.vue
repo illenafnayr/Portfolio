@@ -1,11 +1,19 @@
 <template>
-  <div v-if="!screenSaverActive" @mousemove="startScreenSaver" class="home">
+  <div
+    v-if="!screenSaverActive"
+    v-on:keydown="handleKeyPress"
+    @click="startScreenSaver"
+    @mousemove="startScreenSaver"
+    class="home"
+  >
     <CyanCat />
     <Desktop />
     <NavBar />
   </div>
   <div
     v-if="screenSaverActive"
+    v-on:keydown="handleKeyPress"
+    @click="stopScreenSaver"
     @mousemove="stopScreenSaver"
     class="screen-saver"
   >
@@ -26,10 +34,19 @@ export default {
     Desktop,
     NavBar,
   },
+  created() {
+    window.addEventListener("keydown", (e) => {
+      // if (e.key == "Escape") {
+      //   this.showModal = !this.showModal;
+      // }
+      console.log(e);
+      this.handleKeyPress();
+    });
+  },
   mounted() {
     console.warn("this message will self destruct in 30s");
     setTimeout(() => {
-      console.error("ka-boom!");
+      console.error("💥 boom! 💥");
     }, 1000 * 30);
   },
   data() {
@@ -38,16 +55,25 @@ export default {
     };
   },
   methods: {
-    startScreenSaver(evt) {
-      console.log("event: ", evt);
+    startScreenSaver() {
       this.screenSaverActive = undefined;
-      setInterval(() => {
-        console.log("screen saver true")
+      clearTimeout(this.timer);
+      this.timer = setTimeout(() => {
         this.screenSaverActive = true;
-      }, 5000);
+      }, 1000 * 3);
+    },
+    handleKeyPress(evt) {
+      console.log("Key Pressed! ", evt);
+
+      if (this.screenSaverActive) {
+        this.stopScreenSaver();
+      }
+      if (!this.screenSaverActive) {
+        this.startScreenSaver;
+      }
     },
     stopScreenSaver() {
-      console.log("stop screen saver");
+      clearTimeout(this.timer);
       this.screenSaverActive = undefined;
     },
   },
