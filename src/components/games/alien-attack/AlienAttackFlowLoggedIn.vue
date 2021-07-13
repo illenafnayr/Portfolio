@@ -1,12 +1,12 @@
 <template>
-  <div id="alien-attack-flow-container">
+  <div id="alien-attack-flow-logged-in-container">
     <h1 class="title">write game here</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: "AlienAttackFlow",
+  name: "AlienAttackFlowLoggedin",
   components: {},
   created() {},
   mounted() {},
@@ -26,7 +26,7 @@ body {
   overflow: hidden;
 }
 
-#alien-attack-flow-container {
+#alien-attack-flow-logged-in-container {
   width: 100vw;
   height: 100vh;
   justify-content: center;
@@ -34,11 +34,6 @@ body {
 }
 
 .title {
-    color: $color-red;
-}
-
-#kitty {
-  width: 100%;
-  height: 100%;
+    color: $color-background;
 }
 </style>

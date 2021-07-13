@@ -1,8 +1,15 @@
 <template>
-  <div @mousemove="handleMouseMove" class="home">
+  <div v-if="!screenSaverActive" @mousemove="startScreenSaver" class="home">
     <CyanCat />
     <Desktop />
     <NavBar />
+  </div>
+  <div
+    v-if="screenSaverActive"
+    @mousemove="stopScreenSaver"
+    class="screen-saver"
+  >
+    <h1>Screensaver</h1>
   </div>
 </template>
 
@@ -26,22 +33,23 @@ export default {
     }, 1000 * 30);
   },
   data() {
-    return{
-      timer: undefined,
-    }
+    return {
+      screenSaverActive: undefined,
+    };
   },
   methods: {
-    resetTimer(timer) {
-      clearInterval(timer);
-    },
-    handleMouseMove(evt) {
+    startScreenSaver(evt) {
       console.log("event: ", evt);
-      this.resetTimer(this.timer);
-      this.timer = setTimeout(this.showScreenSaver, 5000);
+      this.screenSaverActive = undefined;
+      setInterval(() => {
+        console.log("screen saver true")
+        this.screenSaverActive = true;
+      }, 5000);
     },
-    showScreenSaver() {
-      console.log("show screen saver")
-    }
+    stopScreenSaver() {
+      console.log("stop screen saver");
+      this.screenSaverActive = undefined;
+    },
   },
 };
 </script>
@@ -50,6 +58,11 @@ export default {
 @import "../styles/global.scss";
 body {
   margin: 0;
-  background-color: $color-background-color;
+  background-color: $color-background;
+}
+
+.screen-saver {
+  width: 100vw;
+  height: 100vh;
 }
 </style>
