@@ -34,7 +34,7 @@ body {
 }
 
 .title {
-    color: red;
+    color: $color-red;
 }
 
 #kitty {
