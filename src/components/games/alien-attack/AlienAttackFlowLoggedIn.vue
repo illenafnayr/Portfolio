@@ -1,33 +1,27 @@
 <template>
   <div id="alien-attack-flow-container">
-<h1>write game here</h1>
+    <h1 class="title">write game here</h1>
   </div>
 </template>
 
 <script>
-
 export default {
   name: "AlienAttackFlow",
-  components: {
-  },
+  components: {},
   created() {},
-  mounted() {
-  },
-  computed: {
-
-  },
+  mounted() {},
+  computed: {},
   data: () => {
     return {
-        isLoggedIn: true,
+      isLoggedIn: true,
     };
   },
-  methods: {
-
-  }
+  methods: {},
 };
 </script>
 
-<style>
+<style lang="scss">
+@import '../../../styles/global.scss';
 body {
   overflow: hidden;
 }
@@ -37,6 +31,10 @@ body {
   height: 100vh;
   justify-content: center;
   align-items: center;
+}
+
+.title {
+    color: red;
 }
 
 #kitty {

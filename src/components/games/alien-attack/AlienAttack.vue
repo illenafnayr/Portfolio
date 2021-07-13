@@ -21,7 +21,8 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import '../../../styles/global.scss';
 body {
   overflow: hidden;
 }
