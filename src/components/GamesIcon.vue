@@ -1,15 +1,15 @@
 <template>
-  <div ref="draggableContainer" id="portfolioIcon-container">
-    <div id="portfolioIcon-header" @mousedown="dragMouseDown">
+  <div ref="draggableContainer" id="gamesIcon-container">
+    <div id="gamesIcon-header" @mousedown="dragMouseDown">
       <img src="../assets/DocumentsFolder.png" alt="">
     </div>
-    <span id="portfolioBody">Portfolio</span>
+    <span id="gamesBody">Games!</span>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'PortfolioIcon',
+  name: 'GamesIcon',
   data: () => {
     return {
       positions: {
@@ -51,10 +51,10 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 
-#portfolioIcon-container {
+#gamesIcon-container {
   position: absolute;
-  left: 85%;
-  top: 30%;
+  left: 15%;
+  top: 80%;
   z-index: 9;
   font-family: 'VT323', monospace;
   text-align:center;
@@ -62,18 +62,18 @@ export default {
   padding: 0%;
 }
 
-#portfolioIcon-container:active {
+#gamesIcon-container:active {
     background-color: blue;
     color: white;
 }
 
-#portfolioIcon-header {
+#gamesIcon-header {
   cursor:move;
   z-index: 10;
   color: white;
 }
 
-#portfolioIconBody {
+#gamesIconBody {
     font-size: .85rem;
 }
 </style>

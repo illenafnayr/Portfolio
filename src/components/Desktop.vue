@@ -1,16 +1,21 @@
 <template>
   <div id="desktop">
     <span id="title">Studio Fanelli</span>
-    <CLIIcon v-on:dblclick="showCli()" @touchend="showCli()"/>
+    <CLIIcon v-on:dblclick="showCli()" @touchend="showCli()" />
     <CLI />
-    <EmailIcon v-on:dblclick="showEmail()" @touchend="showEmail()"/>
+    <EmailIcon v-on:dblclick="showEmail()" @touchend="showEmail()" />
     <Email />
-    <ResumeIcon v-on:dblclick="showResume()" @touchend="showResume()"/>
-    <Resume v-bind:style='{"display": (isActive? "block" : "none")}' />
-    <Portfolio v-bind:style='{"display": (isActive? "block" : "none")}' />
-    <PortfolioIcon v-on:dblclick="showPortfolio()" @touchend="showPortfolio()"/>
-    <ReadMe v-on:dblclick="showAboutMe()" @touchend="showAboutMe()"/>
-    <AboutMe v-bind:style='{"display": (isActive? "block" : "none")}'/>
+    <ResumeIcon v-on:dblclick="showResume()" @touchend="showResume()" />
+    <Resume v-bind:style="{ display: isActive ? 'block' : 'none' }" />
+    <Portfolio v-bind:style="{ display: isActive ? 'block' : 'none' }" />
+    <PortfolioIcon
+      v-on:dblclick="showPortfolio()"
+      @touchend="showPortfolio()"
+    />
+    <ReadMe v-on:dblclick="showAboutMe()" @touchend="showAboutMe()" />
+    <AboutMe v-bind:style="{ display: isActive ? 'block' : 'none' }" />
+    <GamesIcon v-on:dblclick="showGameSelector" />
+    <GameSelector v-bind:style="{ display: isActive ? 'block' : 'none' }" />
   </div>
 </template>
 
@@ -26,6 +31,8 @@ import AboutMe from '@/components/AboutMe.vue'
 import ReadMe from '@/components/ReadMe.vue'
 import PortfolioIcon from '@/components/PortfolioIcon.vue'
 import Portfolio from '@/components/Portfolio.vue'
+import GamesIcon from './GamesIcon.vue'
+import GameSelector from './games/GameSelector.vue'
 
 export default {
   name: 'Desktop',
@@ -39,7 +46,9 @@ export default {
     Resume,
     Portfolio,
     PortfolioIcon,
-    AboutMe
+    AboutMe,
+    GamesIcon,
+    GameSelector,
   },
   data() {
     return {
@@ -70,13 +79,19 @@ export default {
         let input = document.querySelector('#command');
         input.focus();
         input.select();
-    }    
+    },
+    showGameSelector() {
+      console.log("display: ", document.querySelector('#game-selector-container').style.display)
+      if (document.querySelector('#game-selector-container').style.display === "none") {
+        document.querySelector('#game-selector-container').style.display = "block"
+      }
+    }
   }
 }
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 
 #desktop {
   height: calc(100vh - 54px);
@@ -89,8 +104,7 @@ export default {
   top: 35%;
   left: 25%;
   font-size: 4.7rem;
-  font-family: 'VT323', monospace;
-  color: whitesmoke
+  font-family: "VT323", monospace;
+  color: whitesmoke;
 }
-  
 </style>
