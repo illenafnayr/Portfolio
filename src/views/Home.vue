@@ -41,8 +41,9 @@ export default {
       // if (e.key == "Escape") {
       //   this.showModal = !this.showModal;
       // }
+      this.screenSaverActive = undefined;
+      this.startScreenSaver();
       console.log(e);
-      this.handleKeyPress();
     });
   },
   mounted() {
@@ -63,16 +64,6 @@ export default {
       this.timer = setTimeout(() => {
         this.screenSaverActive = true;
       }, 1000 * 3);
-    },
-    handleKeyPress(evt) {
-      console.log("Key Pressed! ", evt);
-
-      if (this.screenSaverActive) {
-        this.stopScreenSaver();
-      }
-      if (!this.screenSaverActive) {
-        this.startScreenSaver;
-      }
     },
     stopScreenSaver() {
       clearTimeout(this.timer);
