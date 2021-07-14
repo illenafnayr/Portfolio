@@ -17,7 +17,7 @@
     @mousemove="stopScreenSaver"
     class="screen-saver"
   >
-    <h1>Screensaver</h1>
+    <ScreenSaver />
   </div>
 </template>
 
@@ -26,6 +26,7 @@
 import Desktop from "@/components/Desktop.vue";
 import NavBar from "@/components/NavBar.vue";
 import CyanCat from "@/components/CyanCat.vue";
+import ScreenSaver from "@/components/ScreenSaver.vue"
 
 export default {
   name: "Home",
@@ -33,6 +34,7 @@ export default {
     CyanCat,
     Desktop,
     NavBar,
+    ScreenSaver,
   },
   created() {
     window.addEventListener("keydown", (e) => {
