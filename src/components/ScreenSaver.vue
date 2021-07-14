@@ -1,6 +1,7 @@
 <template>
   <div @click="method" id="screen-saver-container">
-    <div v-for="i in 10000" :key="i" class="square"></div>
+    <div v-for="i in 12" :key="i" class="smallCircles div"></div>
+    <div class="ring div"></div>
   </div>
 </template>
 
@@ -15,30 +16,32 @@ export default {
   computed: {},
   data: () => {
     return {
-      squares: [],
+      smallCircles: [],
     };
   },
   methods: {
     method() {
-      const square = document.querySelectorAll(".square");
-      for (let i = 0; i < square.length; i++) {
-        const r = Math.floor(Math.random() * 256) / 1;
-        const g = Math.floor(Math.random() * 256) / 1;
-        const b = Math.floor(Math.random() * 256) / 1;
-        square[i].id = `square${i}`;
-        square[i].style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-        this.squares.push(square);
+      const smallCircles = document.querySelectorAll(".smallCircles");
+      for (let i = 0; i < smallCircles.length; i++) {
+        // const r = Math.floor(Math.random() * 256) / 1;
+        // const g = Math.floor(Math.random() * 256) / 1;
+        // const b = Math.floor(Math.random() * 256) / 1;
+        smallCircles[i].id = `smallCircles${i}`;
+        // smallCircles[i].style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        this.smallCircles.push(smallCircles);
         setTimeout(() => {
-          this.animate();
+          // this.animate();
         }, 1000);
       }
     },
     animate() {
-      for (let i = 0; i < this.squares.length; i++) {
+      for (let i = 0; i < this.smallCircles.length; i++) {
         const r = Math.floor(Math.random() * 256) / 1;
         const g = Math.floor(Math.random() * 256) / 1;
         const b = Math.floor(Math.random() * 256) / 1;
-        document.querySelector(`#square${i}`).style.backgroundColor = `rgb(${r},${g},${b})`
+        document.querySelector(
+          `#smallCircles${i}`
+        ).style.backgroundColor = `rgb(${r},${g},${b})`;
       }
     },
   },
@@ -47,39 +50,73 @@ export default {
 
 <style lang="scss">
 @import "../styles/global.scss";
+$bg: #333;
+$cc: #fff;
+
+$n-dots: 12;
+$d-dots: 30px;
+$d-ring: 300px;
+
+$rt: 15px;
+
+$ba: 360deg / $n-dots;
+$trans-dist: 2 * $d-dots;
 body {
   overflow: hidden;
+  background-color: $bg !important;
+  align-items: center;
 }
-
-.element {
-  height: 250px;
-  width: 250px;
-}
-
 #screen-saver-container {
-  width: 100vw;
   height: 100vh;
+  width: 100vw;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
 
-.square {
-  height: 1vh;
-  width: 1vh;
-  border: 1px solid green;
-  box-sizing: border-box;
-  margin: 0 auto;
-  //   background-color: red;
-  //   animation-name: pulse;
-  //   animation-duration: 3s;
-  //   animation-timing-function: ease-out;
-  //   animation-delay: 0;
-  //   animation-direction: alternate;
-  //   animation-iteration-count: infinite;
-  //   animation-fill-mode: none;
-  //   animation-play-state: running;
+.div,
+:after {
+  border-radius: 50%;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.ring {
+  &:after {
+    width: $d-ring;
+    height: $d-ring;
+    margin: -0.5 * $d-ring;
+    border: $rt solid $cc;
+    content: "";
+  }
+}
+
+.smallCircles {
+  @for $i from 1 to $n-dots + 1 {
+    &:nth-child(#{$i}) {
+      transform: rotate($i * $ba) translate($d-ring / 2);
+      &:after{
+        animation-delay: $i * 2s / 12;
+      }
+    }
+  }
+  &:after {
+    height: $d-dots;
+    width: $d-dots;
+    margin: $d-dots / 2;
+    background-color: $cc;
+    content: "";
+    animation: play 2s linear infinite;
+  }
+}
+
+@keyframes play {
+  0% {
+    transform: rotateY(0deg) translate($trans-dist) rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg) translate($trans-dist) rotateY(-360deg);
+  }
 }
 
 // @keyframes pulse {
