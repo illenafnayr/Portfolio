@@ -23,25 +23,10 @@ export default {
     method() {
       const smallCircles = document.querySelectorAll(".smallCircles");
       for (let i = 0; i < smallCircles.length; i++) {
-        // const r = Math.floor(Math.random() * 256) / 1;
-        // const g = Math.floor(Math.random() * 256) / 1;
-        // const b = Math.floor(Math.random() * 256) / 1;
         smallCircles[i].id = `smallCircles${i}`;
-        // smallCircles[i].style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
         this.smallCircles.push(smallCircles);
         setTimeout(() => {
-          // this.animate();
         }, 1000);
-      }
-    },
-    animate() {
-      for (let i = 0; i < this.smallCircles.length; i++) {
-        const r = Math.floor(Math.random() * 256) / 1;
-        const g = Math.floor(Math.random() * 256) / 1;
-        const b = Math.floor(Math.random() * 256) / 1;
-        document.querySelector(
-          `#smallCircles${i}`
-        ).style.backgroundColor = `rgb(${r},${g},${b})`;
       }
     },
   },
@@ -119,15 +104,4 @@ body {
   }
 }
 
-// @keyframes pulse {
-//   0% {
-//     background-color: red;
-//   }
-//   50% {
-//     background-color: blue;
-//   }
-//   100% {
-//     background-color: yellow;
-//   }
-// }
 </style>
