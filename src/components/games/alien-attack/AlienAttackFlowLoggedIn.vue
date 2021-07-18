@@ -9,39 +9,49 @@
       <div>Defense: {{ player.defense }}</div>
       <button @click="attack">Click To Attack</button>
     </div>
-    <div class="enemey">
+    <div class="enemy">
       <h2>Attacker Alien:</h2>
-      <div>Name: {{ enemey.name }}</div>
-      <div>Hitpoints: {{ enemey.hp }}</div>
-      <div>Attack: {{ enemey.attack }}</div>
-      <div>Defense: {{ enemey.defense }}</div>
+      <div>Name: {{ enemy.name }}</div>
+      <div>Hitpoints: {{ enemy.hp }}</div>
+      <div>Attack: {{ enemy.attack }}</div>
+      <div>Defense: {{ enemy.defense }}</div>
+    </div>
+
+    <div class="alien-attack-canvas">
+      <div id="player"></div>
     </div>
   </div>
 </template>
-
 <script>
 export default {
   name: "AlienAttackFlowLoggedin",
   components: {},
   created() {},
   mounted() {
-    this.reset()
+    this.reset();
+    document.addEventListener("keydown", this.move);
   },
   computed: {},
   data: () => {
     return {
       isLoggedIn: true,
       player: {
-        name: "name",
+        name: undefined,
         hp: undefined,
-        attack: undefined,
         defense: undefined,
+        img: undefined,
+        weapons: [],
       },
-      enemey: {
-        name: "name",
+      enemy: {
+        name: undefined,
         hp: undefined,
-        attack: undefined,
         defense: undefined,
+        img: undefined,
+        weapons: [],
+      },
+      weapon: {
+        attack: undefined,
+        accuracy: undefined,
       },
     };
   },
@@ -54,12 +64,38 @@ export default {
       }
     },
     reset() {
+      this.setPlayerStats();
+      this.setEnemyStats();
+    },
+    setPlayerStats() {
       this.player.hp = 10;
       this.player.attack = 5;
       this.player.defense = 5;
-      this.enemey.hp = Math.floor(Math.random() * 10) / 1 + 1;
-      this.enemey.attack = Math.floor(Math.random() * 10) / 1 + 1;
-      this.enemey.defense = Math.floor(Math.random() * 10) / 1 + 1;
+    },
+    setEnemyStats() {
+      this.enemy.hp = Math.floor(Math.random() * 10);
+      this.enemy.attack = Math.floor(Math.random() * 10);
+      this.enemy.defense = Math.floor(Math.random() * 10);
+    },
+    move(evt) {
+      // console.log(evt)
+      switch (evt.key) {
+        case "ArrowUp":
+          console.log("arrowuP");
+          break;
+
+        case "ArrowDown":
+          console.log("arrowdown");
+          break;
+
+        case "ArrowLeft":
+          console.log(`arrow left`);
+          break;
+
+        case "ArrowRight":
+          console.log(`arrow right`);
+          break;
+      }
     },
   },
 };
@@ -76,9 +112,23 @@ body {
   height: 100vh;
   justify-content: center;
   align-items: center;
+  display: flex;
 }
 
 .title {
   color: $color-background;
+}
+
+.alien-attack-canvas {
+  width: 750px;
+  height: 750px;
+  border: 1px solid gold;
+  z-index: 999;
+}
+
+#player {
+  width: 75px;
+  height: 75px;
+  background-color: blueviolet;
 }
 </style>

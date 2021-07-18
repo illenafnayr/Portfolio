@@ -38,9 +38,6 @@ export default {
   },
   created() {
     window.addEventListener("keydown", (e) => {
-      // if (e.key == "Escape") {
-      //   this.showModal = !this.showModal;
-      // }
       this.screenSaverActive = undefined;
       this.startScreenSaver();
       console.log(e);
@@ -49,7 +46,7 @@ export default {
   mounted() {
     console.warn("this message will self destruct in 30s");
     setTimeout(() => {
-      console.error("💥 boom! 💥");
+      console.error("💥 boom 💥");
     }, 1000 * 30);
   },
   data() {
