@@ -2,7 +2,7 @@
   <div id="alien-attack-flow-logged-in-container">
     <div v-if="!canvas_active">
       <h1 class="title">Alien Attack</h1>
-      <button id="startALienFarm" @click="showCanvas()">Start Game</button>
+      <div id="startALienFarm" @click="showCanvas()">Start Game</div>
     </div>
     <canvas v-if="canvas_active" class="alien-attack-canvas"></canvas>
   </div>
@@ -171,6 +171,18 @@ body {
   margin: 0;
 }
 
+#startALienFarm {
+  cursor: pointer;
+  width: 7rem;
+  height: 3rem;
+  border-radius: 1px;
+  border: 5px solid #fff;
+  background-color: none;
+  &:hover {
+    animation: button 5s infinite;
+  }
+}
+
 #alien-attack-flow-logged-in-container {
   width: 100%;
   height: 100%;
@@ -189,5 +201,38 @@ body {
   width: 1800px;
   height: 750px;
   border: 5px solid $color-alienGreen;
+}
+
+@keyframes button {
+  10% {
+    border: 2.5px solid #f70078;
+  }
+  20% {
+    border: 2.5px solid #eb0071;
+  }
+  30% {
+    border: 2.5px solid #d10065;
+  }
+  40% {
+    border: 2.5px solid #ab0053;
+  }
+  50% {
+    border: 2.5px solid #710037;
+  }
+  60% {
+    border: 2.5px solid #ab0053;
+  }
+  70% {
+    border: 2.5px solid #d10065;
+  }
+  80% {
+    border: 2.5px solid #eb0071;
+  }
+  90% {
+    border: 2.5px solid #f70078;
+  }
+  100% {
+    border: 2.5px solid #eb0071;
+  }
 }
 </style>
