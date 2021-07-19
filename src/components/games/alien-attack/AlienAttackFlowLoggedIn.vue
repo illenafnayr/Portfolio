@@ -1,10 +1,10 @@
 <template>
   <div id="alien-attack-flow-logged-in-container">
-    <h1 class="title">Alien Attack</h1>
-    <button id="startALienFarm" @click="startGame()">Start Game</button>
-    <canvas class="alien-attack-canvas">
-      <!-- <div id="player"></div> -->
-    </canvas>
+    <div v-if="!canvas_active">
+      <h1 class="title">Alien Attack</h1>
+      <button id="startALienFarm" @click="showCanvas()">Start Game</button>
+    </div>
+    <canvas v-if="canvas_active" class="alien-attack-canvas"></canvas>
   </div>
 </template>
 <script>
@@ -15,6 +15,8 @@ export default {
   mounted() {
     this.reset();
     document.addEventListener("keydown", this.move);
+    document.querySelectorAll("canvas").width = window.innerWidth;
+    document.querySelectorAll("canvas").height = window.innerHeight;
   },
   computed: {},
   data: () => {
@@ -22,12 +24,13 @@ export default {
       isLoggedIn: true,
       SPRITE_WIDTH: 48,
       SPRITE_HEIGHT: 48,
+      canvas_active: undefined,
     };
   },
   methods: {
     reset() {},
     startGame() {
-      const SCALE = .5;
+      const SCALE = 0.25;
       const WIDTH = this.SPRITE_WIDTH;
       const HEIGHT = this.SPRITE_HEIGHT;
       const SCALED_WIDTH = SCALE * WIDTH;
@@ -40,7 +43,7 @@ export default {
       const FRAME_LIMIT = 12;
       const MOVEMENT_SPEED = 1;
 
-      let canvas = document.querySelector("canvas");
+      let canvas = document.querySelector(".alien-attack-canvas");
       let ctx = canvas.getContext("2d");
       let keyPresses = {};
       let currentDirection = FACING_DOWN;
@@ -144,6 +147,19 @@ export default {
         currentDirection = direction;
       }
     },
+    showCanvas() {
+      this.canvas_active = true;
+      if (this.canvas_active) {
+        setTimeout(() => {
+          let canvas = document.querySelector(".alien-attack-canvas");
+          console.log("canvas: ", canvas);
+          canvas.style.width = window.innerWidth;
+          canvas.style.height = window.innerHeight;
+          canvas.style.display;
+          this.startGame();
+        }, 500);
+      }
+    },
   },
 };
 </script>
@@ -151,16 +167,18 @@ export default {
 <style lang="scss">
 @import "../../../styles/global.scss";
 body {
-  overflow: hidden;
+  // overflow: hidden;
+  margin: 0;
 }
 
 #alien-attack-flow-logged-in-container {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
   justify-content: center;
   align-items: center;
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
 }
 
 .title {
@@ -168,17 +186,8 @@ body {
 }
 
 .alien-attack-canvas {
-  width: 750px;
+  width: 1800px;
   height: 750px;
-  border: 1px solid gold;
-  z-index: 999;
+  border: 5px solid $color-alienGreen;
 }
-
-#player {
-  width: 75px;
-  height: 75px;
-  background-color: blueviolet;
-}
-
-
 </style>
