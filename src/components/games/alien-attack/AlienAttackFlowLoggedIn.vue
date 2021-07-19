@@ -1,23 +1,7 @@
 <template>
   <div id="alien-attack-flow-logged-in-container">
     <h1 class="title">Alien Attack</h1>
-    <div class="player">
-      <h2>You:</h2>
-      <div>Name: {{ player.name }}</div>
-      <div>Hitpoints: {{ player.hp }}</div>
-      <div>Attack: {{ player.attack }}</div>
-      <div>Defense: {{ player.defense }}</div>
-      <button @click="attack">Click To Attack</button>
-    </div>
-    <div class="enemy">
-      <h2>Attacker Alien:</h2>
-      <div>Name: {{ enemy.name }}</div>
-      <div>Hitpoints: {{ enemy.hp }}</div>
-      <div>Attack: {{ enemy.attack }}</div>
-      <div>Defense: {{ enemy.defense }}</div>
-    </div>
-
-    <button @click="drawCanvas()">Start Game</button>
+    <button id="startALienFarm" @click="startGame()">Start Game</button>
     <canvas class="alien-attack-canvas">
       <!-- <div id="player"></div> -->
     </canvas>
@@ -36,60 +20,19 @@ export default {
   data: () => {
     return {
       isLoggedIn: true,
-      player: {
-        name: undefined,
-        hp: undefined,
-        defense: undefined,
-        img: undefined,
-        weapons: [],
-      },
-      enemy: {
-        name: undefined,
-        hp: undefined,
-        defense: undefined,
-        img: undefined,
-        weapons: [],
-      },
-      weapon: {
-        attack: undefined,
-        accuracy: undefined,
-      },
-      position: 48,
       SPRITE_WIDTH: 48,
       SPRITE_HEIGHT: 48,
-      // BORDER_WIDTH: 1,
-      // SPACING_WIDTH: 1,
     };
   },
   methods: {
     reset() {},
-    // move(evt) {
-    //   // console.log(evt)
-    //   switch (evt.key) {
-    //     case "ArrowUp":
-    //       console.log("arrowuP");
-    //       break;
-
-    //     case "ArrowDown":
-    //       console.log("arrowdown");
-    //       break;
-
-    //     case "ArrowLeft":
-    //       console.log(`arrow left`);
-    //       break;
-
-    //     case "ArrowRight":
-    //       console.log(`arrow right`);
-    //       break;
-    //   }
-    // },
-    drawCanvas() {
+    startGame() {
       const SCALE = .5;
       const WIDTH = this.SPRITE_WIDTH;
       const HEIGHT = this.SPRITE_HEIGHT;
       const SCALED_WIDTH = SCALE * WIDTH;
       const SCALED_HEIGHT = SCALE * HEIGHT;
-      const CYCLE_LOOP = [0, 1, 0, 2];
+      const CYCLE_LOOP = [3, 4, 3, 5];
       const FACING_DOWN = 0;
       const FACING_UP = 3;
       const FACING_LEFT = 1;
@@ -217,6 +160,7 @@ body {
   justify-content: center;
   align-items: center;
   display: flex;
+  flex-direction: column;
 }
 
 .title {
@@ -235,4 +179,6 @@ body {
   height: 75px;
   background-color: blueviolet;
 }
+
+
 </style>
