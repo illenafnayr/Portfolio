@@ -1,9 +1,9 @@
 <template>
-    <div ref="draggableContainer" id="directoryIcon-container">
-        <div id="directoryIcon-header" @mousedown="dragMouseDown">
+    <div ref="draggableContainer" class="directoryIcon-container" :id="name + 'icon'">
+        <div class="directoryIcon-header" @mousedown="dragMouseDown">
             <img src="../assets/DocumentsFolder.png" alt="">
         </div>
-        <span id="directoryBody">{{ this.name }}</span>
+        <span class="directoryBody">{{ this.name }}</span>
     </div>
 </template>
 
@@ -21,8 +21,17 @@ export default {
             }
         }
     },
+    mounted() {
+        const randomNumber = () => {
+            return Math.floor(Math.random() * (90 - 10 + 1) + 10)
+        }
+        const iconStyle = document.querySelector(`#${this.name + 'icon'}`).style
+        iconStyle.top = `${randomNumber()}%`
+        iconStyle.top = `${randomNumber()}%`
+    },
     methods: {
         dragMouseDown: function (event) {
+            console.log("drageMouseDown")
             event.preventDefault()
             // get the mouse cursor position at startup:
             this.positions.clientX = event.clientX
@@ -31,6 +40,7 @@ export default {
             document.onmouseup = this.closeDragElement
         },
         elementDrag: function (event) {
+            console.log("elementDrag")
             event.preventDefault()
             this.positions.movementX = this.positions.clientX - event.clientX
             this.positions.movementY = this.positions.clientY - event.clientY
@@ -53,10 +63,8 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 
-#directoryIcon-container {
+.directoryIcon-container {
     position: absolute;
-    left: 22%;
-    top: 13%;
     z-index: 9;
     font-family: 'VT323', monospace;
     text-align: center;
@@ -64,18 +72,18 @@ export default {
     padding: 0%;
 }
 
-#directoryIcon-container:active {
+.directoryIcon-container:active {
     background-color: blue;
     color: white;
 }
 
-#directoryIcon-header {
+.directoryIcon-header {
     cursor: move;
     z-index: 10;
     color: white;
 }
 
-#directoryIconBody {
+.directoryIconBody {
     font-size: .85rem;
 }
 </style>

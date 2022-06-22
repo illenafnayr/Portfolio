@@ -13,9 +13,9 @@
     <AboutMe v-bind:style="{ display: isActive ? 'block' : 'none' }" />
     <GamesIcon v-on:dblclick="showGameSelector" />
     <GameSelector v-bind:style="{ display: isActive ? 'block' : 'none' }" />
-    <div v-for="(directory, i) in directories.length" :key="i">
-      <DirectoryIcon v-on:dblclick="showDirectory(directories[i].name)" :name="directories[i].name" />
-      <Directory :name="directories[i].name" />
+    <div v-for="(directory, i) in directories" :key="i">
+      <DirectoryIcon v-on:dblclick="showDirectory(directory.name)" :name="directory.name" />
+      <Directory :name="directory.name" :directories="directories" />
     </div>
 
   </div>

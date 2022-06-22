@@ -93,6 +93,7 @@ export default {
   border-color: #ffffff #808080 #808080 #ffffff;
   display: flex;
   font-family: "VT323", monospace;
+  z-index: 999;
 }
 
 #sidebar {

@@ -1,7 +1,7 @@
 <template>
     <div ref="draggableContainer" class="directory-container" :id="name">
-        <div id="directory-header" @mousedown="dragMouseDown">
-            <span>{{ name }}</span>
+        <div class="directory-header" @mousedown="dragMouseDown">
+            <span>C: _/{{ name }}</span>
             <div class="close" v-on:click="close()">X</div>
         </div>
         <div id="links">
@@ -14,7 +14,8 @@
 export default {
     name: 'Directory',
     props: {
-        name: String
+        name: String,
+        directories: Array
     },
     data: function () {
         return {
@@ -27,6 +28,7 @@ export default {
         }
     },
     mounted() {
+        console.log(`#${this.name}`)
         document.querySelector(`#${this.name}`).style.display = 'none'
     },
     methods: {
@@ -53,6 +55,7 @@ export default {
             document.onmousemove = null
         },
         close() {
+            console.log("close: ", document.querySelector(`#${this.name}`))
             document.querySelector(`#${this.name}`).style.display = 'none'
         }
     }
@@ -83,7 +86,7 @@ export default {
     left: 15%;
 }
 
-#directory-header {
+.directory-header {
     cursor: move;
     z-index: 10;
     border: 1px solid black;
