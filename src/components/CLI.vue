@@ -4,11 +4,13 @@
       <span>command prompt</span>
       <div class="close" v-on:click="closeCLI()">X</div>
     </div>
-    <span id="cmds">C: _/></span><input type="text" name="command" id="command" @change="ls()" placeholder="type 'ls' to see a list of commands">
-    <p class="listOfCommands" >type 'email' - open email application</p>
-    <p class="listOfCommands" >type 'portfolio' to view portfolio</p>
-    <p class="listOfCommands" >type 'resume' to open resume</p>
-    <p class="listOfCommands" >type 'catmode' to initialize cat mode ('exit catmode' to turn off)</p>
+    <span id="cmds">C: _/></span><input type="text" name="command" id="command" @change="ls()"
+      placeholder="Shell commands are defined internally.">
+    <p class="listOfCommands">usage 'email' - open email application.</p>
+    <p class="listOfCommands">usage 'portfolio' to view portfolio.</p>
+    <p class="listOfCommands">usage 'resume' to open resume.</p>
+    <p class="listOfCommands">usage 'catmode' to initialize cat mode ('exit catmode' to turn off).</p>
+    <p class="listOfCommands">usage 'mkdir [OPTION]' to create new directory. </p>
   </div>
 </template>
 
@@ -44,11 +46,11 @@ export default {
       this.$refs.draggableContainer.style.top = (this.$refs.draggableContainer.offsetTop - this.positions.movementY) + 'px'
       this.$refs.draggableContainer.style.left = (this.$refs.draggableContainer.offsetLeft - this.positions.movementX) + 'px'
     },
-    closeDragElement () {
+    closeDragElement() {
       document.onmouseup = null
       document.onmousemove = null
     },
-    closeCLI () {
+    closeCLI() {
       document.querySelector('#cli-container').style.display = 'none'
     },
     getInputValue() {
@@ -102,6 +104,15 @@ export default {
         document.querySelector('#command').value = ''
         document.querySelector('#kitty-container').style.display = "none"
       }
+      if (document.querySelector('#command').value.toLowerCase().startsWith('mkdir')) {
+        let directoryName = document.querySelector('#command').value.toLowerCase().replace("mkdir ", "");
+        let listOfCommands = document.querySelectorAll('.listOfCommands')
+        for (let i = 0; i < listOfCommands.length; i++) {
+          listOfCommands[i].style.display = "none"
+        }
+        this.$emit("createDirectory", directoryName)
+        document.querySelector('#command').value = ''
+      }
     }
   }
 }
@@ -120,8 +131,8 @@ export default {
   max-width: 600px;
   border: 2px solid;
   background-color: black;
-  border-width:1px;
-  border-color:#FFFFFF #808080 #808080 #FFFFFF;
+  border-width: 1px;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
   resize: both;
   overflow: auto;
   font-family: 'VT323', monospace;
@@ -131,27 +142,28 @@ export default {
   top: 25%;
   left: 25%;
 }
+
 #cli-header {
-  cursor:move;
+  cursor: move;
   z-index: 10;
   border: 1px solid black;
   color: white;
-  background-image: linear-gradient(90deg, rgb(0,0,123), black);
+  background-image: linear-gradient(90deg, rgb(0, 0, 123), black);
   display: flex;
   justify-content: space-between;
 }
 
 .close {
   border: 1px solid;
-  border-width:1px;
-  border-color:#FFFFFF #808080 #808080 #FFFFFF;
-  background-color: rgb(192,192,192);
+  border-width: 1px;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  background-color: rgb(192, 192, 192);
   width: 3%;
   text-align: center;
 }
 
-.close:active{
-    border-color: #808080  #FFFFFF  #FFFFFF #808080;
+.close:active {
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
 }
 
 #command {
@@ -166,6 +178,4 @@ export default {
 .listOfCommands {
   display: none;
 }
-
-
 </style>

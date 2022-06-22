@@ -2,20 +2,22 @@
   <div id="desktop">
     <span id="title">Studio Fanelli</span>
     <CLIIcon v-on:dblclick="showCli()" @touchend="showCli()" />
-    <CLI />
+    <CLI @createDirectory="createDirectory" />
     <EmailIcon v-on:dblclick="showEmail()" @touchend="showEmail()" />
     <Email />
     <ResumeIcon v-on:dblclick="showResume()" @touchend="showResume()" />
     <Resume v-bind:style="{ display: isActive ? 'block' : 'none' }" />
     <Portfolio v-bind:style="{ display: isActive ? 'block' : 'none' }" />
-    <PortfolioIcon
-      v-on:dblclick="showPortfolio()"
-      @touchend="showPortfolio()"
-    />
+    <PortfolioIcon v-on:dblclick="showPortfolio()" @touchend="showPortfolio()" />
     <ReadMe v-on:dblclick="showAboutMe()" @touchend="showAboutMe()" />
     <AboutMe v-bind:style="{ display: isActive ? 'block' : 'none' }" />
     <GamesIcon v-on:dblclick="showGameSelector" />
     <GameSelector v-bind:style="{ display: isActive ? 'block' : 'none' }" />
+    <div v-for="(directory, i) in directories.length" :key="i">
+      <DirectoryIcon v-on:dblclick="showDirectory(directories[i].name)" :name="directories[i].name" />
+      <Directory :name="directories[i].name" />
+    </div>
+
   </div>
 </template>
 
@@ -33,6 +35,8 @@ import PortfolioIcon from '@/components/PortfolioIcon.vue'
 import Portfolio from '@/components/Portfolio.vue'
 import GamesIcon from './GamesIcon.vue'
 import GameSelector from './games/GameSelector.vue'
+import DirectoryIcon from './DirectoryIcon.vue'
+import Directory from './Directory.vue'
 
 export default {
   name: 'Desktop',
@@ -49,10 +53,13 @@ export default {
     AboutMe,
     GamesIcon,
     GameSelector,
+    DirectoryIcon,
+    Directory
   },
   data() {
     return {
-      isActive: false
+      isActive: false,
+      directories: [],
     }
   },
   methods: {
@@ -72,18 +79,27 @@ export default {
       }
     },
     showEmail() {
-        document.querySelector('#email-container').style.display = "block"
+      document.querySelector('#email-container').style.display = "block"
     },
     showCli() {
-        document.querySelector('#cli-container').style.display = "block"
-        let input = document.querySelector('#command');
-        input.focus();
-        input.select();
+      document.querySelector('#cli-container').style.display = "block"
+      let input = document.querySelector('#command');
+      input.focus();
+      input.select();
     },
     showGameSelector() {
-      console.log("display: ", document.querySelector('#game-selector-container').style.display)
       if (document.querySelector('#game-selector-container').style.display === "none") {
         document.querySelector('#game-selector-container').style.display = "block"
+      }
+    },
+    createDirectory(name) {
+      console.log("createDirectory: ", name)
+      this.directories.push({ name: name });
+    },
+    showDirectory(name) {
+      console.log("show directory", document.querySelector(`#${name}`))
+      if (document.querySelector(`#${name}`).style.display === "none") {
+        document.querySelector(`#${name}`).style.display = "block"
       }
     }
   }
