@@ -4,13 +4,17 @@
       <h1 class="title">Alien Attack</h1>
       <div id="startALienFarm" @click="showCanvas()">Start Game</div>
     </div>
-    <canvas v-if="canvas_active" class="alien-attack-canvas"></canvas>
+    <ChickenLogo />
+    <canvas v-if="canvas_active" class="alien-attack-canvas">
+    </canvas>
   </div>
 </template>
 <script>
+import ChickenLogo from "./alienfarm/ChickenLogo.vue";
+
 export default {
   name: "AlienAttackFlowLoggedin",
-  components: {},
+  components: { ChickenLogo },
   created() {},
   mounted() {
     this.reset();
@@ -64,7 +68,7 @@ export default {
       }
 
       function loadImage() {
-        img.src = "https://freepikpsd.com/media/2020/03/alien-sprite-png-1.png";
+        img.src = require("./alienfarm/alien-sprite-1.png");
         img.onload = function () {
           window.requestAnimationFrame(gameLoop);
         };
@@ -198,8 +202,8 @@ body {
 }
 
 .alien-attack-canvas {
-  width: 1800px;
-  height: 750px;
+  width: 60vw;
+  height: 60vh;
   border: 5px solid $color-alienGreen;
 }
 
