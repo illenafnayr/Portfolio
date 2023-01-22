@@ -2,11 +2,13 @@
   <div id="alien-attack-flow-logged-in-container">
     <div v-if="!canvas_active">
       <h1 class="title">Alien Attack</h1>
-      <div id="startALienFarm" @click="showCanvas()">Start Game</div>
+      <ChickenLogo class="hover" @click="showCanvas()" />
+      <div class="white">click the chicken to start</div>
     </div>
-    <ChickenLogo />
-    <canvas v-if="canvas_active" class="alien-attack-canvas">
-    </canvas>
+    <div class="canvas_active" v-if="canvas_active">
+      <ChickenLogo />
+      <canvas class="alien-attack-canvas"> </canvas>
+    </div>
   </div>
 </template>
 <script>
@@ -55,7 +57,8 @@ export default {
       let frameCount = 0;
       let positionX = 0;
       let positionY = 0;
-      let img = new Image();
+      let chicken = new Image();
+      let alien = new Image();
 
       window.addEventListener("keydown", keyDownListener);
       function keyDownListener(event) {
@@ -68,15 +71,29 @@ export default {
       }
 
       function loadImage() {
-        img.src = require("./alienfarm/alien-sprite-1.png");
-        img.onload = function () {
+        chicken.src = require("./alienfarm/chicken-sprite.png");
+        alien.src = require("./alienfarm/alien-sprite.png");
+        chicken.onload = function () {
           window.requestAnimationFrame(gameLoop);
         };
       }
 
-      function drawFrame(frameX, frameY, canvasX, canvasY) {
+      function drawChickenFrame(frameX, frameY, canvasX, canvasY) {
         ctx.drawImage(
-          img,
+          chicken,
+          frameX * WIDTH,
+          frameY * HEIGHT,
+          WIDTH,
+          HEIGHT,
+          canvasX,
+          canvasY,
+          SCALED_WIDTH,
+          SCALED_HEIGHT
+        );
+      }
+      function drawAlienFrame(frameX, frameY, canvasX, canvasY) {
+        ctx.drawImage(
+          alien,
           frameX * WIDTH,
           frameY * HEIGHT,
           WIDTH,
@@ -126,12 +143,13 @@ export default {
           currentLoopIndex = 0;
         }
 
-        drawFrame(
+        drawChickenFrame(
           CYCLE_LOOP[currentLoopIndex],
           currentDirection,
           positionX,
           positionY
         );
+        drawAlienFrame(CYCLE_LOOP[currentLoopIndex], 0, 100, 100);
         window.requestAnimationFrame(gameLoop);
       }
 
@@ -175,18 +193,6 @@ body {
   margin: 0;
 }
 
-#startALienFarm {
-  cursor: pointer;
-  width: 7rem;
-  height: 3rem;
-  border-radius: 1px;
-  border: 5px solid #fff;
-  background-color: none;
-  &:hover {
-    animation: button 5s infinite;
-  }
-}
-
 #alien-attack-flow-logged-in-container {
   width: 100%;
   height: 100%;
@@ -198,7 +204,8 @@ body {
 }
 
 .title {
-  color: $color-background;
+  color: $color-offWhite;
+  text-align: center;
 }
 
 .alien-attack-canvas {
@@ -207,36 +214,15 @@ body {
   border: 5px solid $color-alienGreen;
 }
 
-@keyframes button {
-  10% {
-    border: 2.5px solid #f70078;
-  }
-  20% {
-    border: 2.5px solid #eb0071;
-  }
-  30% {
-    border: 2.5px solid #d10065;
-  }
-  40% {
-    border: 2.5px solid #ab0053;
-  }
-  50% {
-    border: 2.5px solid #710037;
-  }
-  60% {
-    border: 2.5px solid #ab0053;
-  }
-  70% {
-    border: 2.5px solid #d10065;
-  }
-  80% {
-    border: 2.5px solid #eb0071;
-  }
-  90% {
-    border: 2.5px solid #f70078;
-  }
-  100% {
-    border: 2.5px solid #eb0071;
-  }
+.canvas_active {
+  display: contents;
+}
+
+.hover {
+  cursor: pointer;
+}
+
+.white {
+  color: $color-offWhite;
 }
 </style>
