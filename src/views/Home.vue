@@ -60,7 +60,7 @@ export default {
       clearTimeout(this.timer);
       this.timer = setTimeout(() => {
         this.screenSaverActive = true;
-      }, 1000 * 3);
+      }, 1000 * 30);
     },
     stopScreenSaver() {
       clearTimeout(this.timer);
