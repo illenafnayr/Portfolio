@@ -1,11 +1,16 @@
 <template>
-  <div ref="draggableContainer" class="directory-container" :id="name">
+  <div ref="draggableContainer" class="directory-container" :id="`${id}-directory-container`">
     <div class="directory-header" @mousedown="dragMouseDown">
       <span>C: _/{{ name }}</span>
       <div class="close" v-on:click="close()">X</div>
     </div>
     <div id="links">
-      <Icon v-for="(icon, i) in subDirectories" :key="i" :name=icon.name :title=icon.title :filename=icon.imgname
+      <Icon 
+        v-for="(icon, i) in subDirectories"
+        :key="i" :name=icon.name
+        :title=icon.title
+        :filename=icon.imgname
+        :draggable="false"
         v-on:dblclick="showContents(icon.file)" @touchend="showContents(icon.file)" />
     </div>
   </div>
@@ -14,7 +19,7 @@
 <script>
 import { createApp } from 'vue';
 import Icon from './Icon.vue'
-import DocumentWord from './DocumentWord.vue';
+import DocumentWord from './WordFile.vue';
 
 export default {
   name: 'Directory',
@@ -33,6 +38,7 @@ export default {
         movementX: 0,
         movementY: 0,
       },
+      id: this.name.split(' ').join(''),
       subDirectories: [{
         id: 1,
         name: "new",
@@ -54,7 +60,7 @@ export default {
     }
   },
   mounted() {
-    document.querySelector(`#${this.name}`).style.display = 'none'
+    document.querySelector(`#${this.id}-directory-container`).style.display = 'none'
   },
   methods: {
     dragMouseDown: function (event) {
@@ -80,12 +86,12 @@ export default {
       document.onmousemove = null
     },
     close() {
-      document.querySelector(`#${this.name}`).style.display = 'none'
+      document.querySelector(`#${this.id}-directory-container`).style.display = 'none'
     },
     showContents(file) {
       const id = file.name.split(' ').join('')
-      if (document.querySelector(`#${id}-container`) && document.querySelector(`#${id}-container`).style.display == 'none') {
-        document.querySelector(`#${id}-container`).style.display = 'block'
+      if (document.querySelector(`#${id}-file-container`) && document.querySelector(`#${id}-container`).style.display == 'none') {
+        document.querySelector(`#${id}-file-container`).style.display = 'block'
         return
       }
 

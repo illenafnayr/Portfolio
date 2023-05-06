@@ -1,7 +1,7 @@
 <template>
-  <div ref="draggableContainer" :id="`${name}-icon-container`" class="icon-container">
+  <div :ref="draggable ? 'draggableContainer' : undefined" :id="`${id}-icon-container`" class="icon-container">
     <div class="icon-header" @mousedown="dragMouseDown">
-      <img :id="`${name}-icon-img`" :src="require(`../assets/${this.filename}`)" alt="">
+      <img :id="`${id}-icon-img`" :src="require(`../assets/${this.filename}`)" alt="">
     </div>
     <span class="icon-body">{{ title }}</span>
   </div>
@@ -13,7 +13,8 @@ export default {
   props: {
     name: String,
     filename: String,
-    title: String
+    title: String,
+    draggable: Boolean
   },
   data: function () {
     return {
@@ -22,12 +23,13 @@ export default {
         clientY: undefined,
         movementX: 0,
         movementY: 0
-      }
+      },
+      id: this.name.split(' ').join('')
     }
   },
   mounted() {
-    document.getElementById(`${this.name}-icon-container`).style.left = `${Math.floor(Math.random() * 90)}%`;
-    document.getElementById(`${this.name}-icon-container`).style.top = `${Math.floor(Math.random() * 75)}%`;
+    document.getElementById(`${this.id}-icon-container`).style.left = `${Math.floor(Math.random() * 90)}%`;
+    document.getElementById(`${this.id}-icon-container`).style.top = `${Math.floor(Math.random() * 75)}%`;
   },
   methods: {
     dragMouseDown: function (event) {

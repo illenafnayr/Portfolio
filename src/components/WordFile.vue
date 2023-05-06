@@ -1,5 +1,5 @@
 <template>
-  <div ref="draggableContainer" :id="`${id}-container`" class="file-container">
+  <div ref="draggableContainer" :id="`${id}-file-container`" class="file-container">
     <div :id="`${id}-header`" class="file-header" @mousedown="dragMouseDown">
       <span>{{ documentName }}</span>
       <div class="close" @click="closeDocument()">X</div>
@@ -12,7 +12,7 @@
   
 <script>
 export default {
-  name: 'DocumentWord',
+  name: 'WordFile',
   props: {
     file: Object
   },
@@ -52,7 +52,7 @@ export default {
       document.onmousemove = null
     },
     closeDocument() {
-      document.querySelector(`#${this.id}-container`).style.display = 'none'
+      document.querySelector(`#${this.id}-file-container`).style.display = 'none'
     }
   }
 }
@@ -75,7 +75,6 @@ export default {
   overflow: hidden;
   font-family: 'VT323', monospace;
   text-align: center;
-  // display: none;
   top: 21%;
   left: 30%;
 }
