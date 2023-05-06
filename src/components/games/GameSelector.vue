@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     playAlienAttack() {
-      console.log("play alien attack");
+      console.log("Alien Attack! 👽");
       this.$router.push("/games/alien-attack");
     },
   },

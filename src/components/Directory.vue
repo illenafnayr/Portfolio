@@ -7,7 +7,8 @@
     <div id="links">
       <Icon 
         v-for="(icon, i) in subDirectories"
-        :key="i" :name=icon.name
+        :key="i"
+        :name=icon.name
         :title=icon.title
         :filename=icon.imgname
         :draggable="false"

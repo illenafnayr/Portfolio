@@ -1,32 +1,65 @@
 <template>
   <div id="desktop">
     <span id="title">Studio Fanelli</span>
-    <Icon name="cli" title="CMD PROMPT" filename="cli.png" :draggable="true" @dblclick="showCli()"
+    <Icon
+      name="cli"
+      title="CMD PROMPT"
+      filename="cli.png"
+      :draggable="true"
+      @dblclick="showCli()"
       @touchend="showCli()" />
     <CLI @createDirectory="createDirectory" />
 
-    <Icon name="email" title="Email" filename="Mail.png" :draggable="true" @dblclick="showEmail()"
+    <Icon
+      name="email"
+      title="Email"
+      filename="Mail.png"
+      :draggable="true"
+      @dblclick="showEmail()"
       @touchend="showEmail()" />
     <Email />
 
-    <Icon name="resume" title="Resume" filename="Resume-Icon.png" :draggable="true" @dblclick="showResume()"
+    <Icon
+      name="resume"
+      title="Resume"
+      filename="Resume-Icon.png"
+      :draggable="true"
+      @dblclick="showResume()"
       @touchend="showResume()" />
     <Resume v-bind:style="{ display: isActive ? 'block' : 'none' }" />
 
-    <Icon name="portfolio" title="Portfolio" filename="DocumentsFolder.png" :draggable="true" @dblclick="showPortfolio()"
+    <Icon
+      name="portfolio"
+      title="Portfolio"
+      filename="DocumentsFolder.png"
+      :draggable="true"
+      @dblclick="showPortfolio()"
       @touchend="showPortfolio()" />
     <Portfolio v-bind:style="{ display: isActive ? 'block' : 'none' }" />
 
-    <Icon name="aboutme" title="README.txt" filename="Pin-sheet.png" :draggable="true" @dblclick="showAboutMe()"
+    <Icon
+      name="aboutme"
+      title="README.txt"
+      filename="Pin-sheet.png"
+      :draggable="true"
+      @dblclick="showAboutMe()"
       @touchend="showAboutMe()" />
     <AboutMe v-bind:style="{ display: isActive ? 'block' : 'none' }" />
 
-    <Icon name="game-selector" title="Games!" filename="DocumentsFolder.png" :draggable="true"
+    <Icon
+      name="game-selector"
+      title="Games!"
+      filename="DocumentsFolder.png"
+      :draggable="true"
       v-on:dblclick="showGameSelector()" @touchend="showGameSelector()" />
     <GameSelector v-bind:style="{ display: isActive ? 'block' : 'none' }" />
 
     <div v-for="(directory, i) in directories" :key="i">
-      <Icon :name=directory.name :title=directory.name filename="DocumentsFolder.png"
+      <Icon
+        :name=directory.name
+        :title=directory.name
+        filename="DocumentsFolder.png"
+        :draggable="true"
         @dblclick="showDirectory(directory.id)" @touchend="showDirectory(directory.id)" />
       <Directory :name="directory.name" :directories="directories" />
     </div>

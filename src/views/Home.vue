@@ -40,7 +40,6 @@ export default {
     window.addEventListener("keydown", (e) => {
       this.screenSaverActive = undefined;
       this.startScreenSaver();
-      console.log(e);
     });
   },
   mounted() {

@@ -9,7 +9,7 @@
   
 <script>
 export default {
-  name: 'CLIIcon',
+  name: 'Icon',
   props: {
     name: String,
     filename: String,
@@ -33,6 +33,7 @@ export default {
   },
   methods: {
     dragMouseDown: function (event) {
+      if (!this.draggable) { return }
       event.preventDefault()
       // get the mouse cursor position at startup:
       this.positions.clientX = event.clientX
