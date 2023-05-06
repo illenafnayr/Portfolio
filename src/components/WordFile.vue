@@ -1,35 +1,20 @@
 <template>
-  <div ref="draggableContainer" class="directory-container" :id="`${id}-directory-container`">
-    <div class="directory-header" @mousedown="dragMouseDown">
-      <span>C: _/{{ name }}</span>
-      <div class="close" v-on:click="close()">X</div>
+  <div ref="draggableContainer" :id="`${id}-file-container`" class="file-container">
+    <div :id="`${id}-header`" class="file-header" @mousedown="dragMouseDown">
+      <span>{{ documentName }}</span>
+      <div class="close" @click="closeDocument()">X</div>
     </div>
-    <div class="directoryFiles-container">
-      <Icon 
-        v-for="(icon, i) in subDirectories"
-        :key="i"
-        :name=icon.name
-        :title=icon.title
-        :filename=icon.imgname
-        :draggable="false"
-        v-on:dblclick="showContents(icon.file)" @touchend="showContents(icon.file)" />
+    <!-- <iframe src="https://drive.google.com/file/d/1KP3j4HTnb6PT7QXT_49KP7CdftAgPvc7/preview" width="640" height="480"></iframe> -->
+    <div :id="`${id}-body`" class="file-body">
     </div>
   </div>
 </template>
-
+  
 <script>
-import { createApp } from 'vue';
-import Icon from './Icon.vue'
-import DocumentWord from './WordFile.vue';
-
 export default {
-  name: 'Directory',
-  components: {
-    Icon,
-  },
+  name: 'WordFile',
   props: {
-    name: String,
-    directories: Array
+    file: Object
   },
   data: function () {
     return {
@@ -39,30 +24,9 @@ export default {
         movementX: 0,
         movementY: 0,
       },
-      id: this.name.split(' ').join(''),
-      subDirectories: [{
-        id: 1,
-        name: "new",
-        title: "directory",
-        imgname: "DocumentsFolder.png",
-        file: {
-          name: "Tfasdfasd fasd"
-        }
-      },
-      {
-        id: 2,
-        name: "asdf",
-        title: "asdfa",
-        imgname: "Pin-sheet.png",
-        file: {
-          name: "asdf"
-        }
-      }]
+      documentName: this.file.name,
+      id: this.file.name.split(' ').join('')
     }
-  },
-  mounted() {
-    document.querySelector(`#${this.id}-directory-container`).style.display = 'none'
-
   },
   methods: {
     dragMouseDown: function (event) {
@@ -87,36 +51,22 @@ export default {
       document.onmouseup = null
       document.onmousemove = null
     },
-    close() {
-      document.querySelector(`#${this.id}-directory-container`).style.display = 'none'
-    },
-    showContents(file) {
-      const id = file.name.split(' ').join('')
-      if (document.querySelector(`#${id}-file-container`) && document.querySelector(`#${id}-container`).style.display == 'none') {
-        document.querySelector(`#${id}-file-container`).style.display = 'block'
-        return
-      }
-
-      const componentApp = createApp(DocumentWord, { file: file });
-      const componentInstance = componentApp.mount(document.createElement('div'));
-      document.getElementById('desktop').appendChild(componentInstance.$el);
+    closeDocument() {
+      document.querySelector(`#${this.id}-file-container`).style.display = 'none'
     }
   }
 }
 </script>
-
+  
 <style lang="scss">
 @import '../styles/global.scss';
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
-
-.directory-container {
+.file-container {
   position: absolute;
   z-index: 10;
-  height: auto;
+  height: 55%;
   width: 50%;
-  max-width: 600px;
-  min-width: 300px;
   border: 2px solid;
   background-color: rgb(192, 192, 192);
   border-width: 1px;
@@ -125,11 +75,11 @@ export default {
   overflow: hidden;
   font-family: 'VT323', monospace;
   text-align: center;
-  top: 5%;
-  left: 15%;
+  top: 21%;
+  left: 30%;
 }
 
-.directory-header {
+.file-header {
   cursor: move;
   z-index: 10;
   border: 1px solid black;
@@ -151,11 +101,14 @@ export default {
   border-color: #808080 #FFFFFF #FFFFFF #808080;
 }
 
-.directoryFiles-container {
+.file-Body {
+  height: 95%;
+  width: 100%;
+  /* border: 1px solid gold; */
   display: flex;
-  align-content: center;
-  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
   overflow: auto;
-  padding: 3%;
+  /* justify-content: center; */
 }
 </style>
