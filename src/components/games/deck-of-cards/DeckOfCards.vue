@@ -85,7 +85,7 @@
         <div>Right click on deck to deal across the table</div>
         <div>Left click on a card to discard</div>
         <div class="mainContainer">
-            <div class="container" id="computer">
+            <div class="card-container" id="computer">
             </div>
             <button id="reset">Reset</button>
             <button id="war" class="button">War</button>
@@ -708,7 +708,7 @@ body>h1 {
     /* border: 1px solid black; */
 }
 
-.container {
+.card-container {
     /* border: 1px solid black; */
     visibility: hidden;
     display: flex;

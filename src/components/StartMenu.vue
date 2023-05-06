@@ -136,7 +136,6 @@ hr {
   display: flex;
   align-items: center;
   color: black;
-  /* border: 1px solid gold; */
 }
 
 .block:hover {
