@@ -1,20 +1,69 @@
 <template>
   <div id="desktop">
     <span id="title">Studio Fanelli</span>
-    <CLIIcon v-on:dblclick="showCli()" @touchend="showCli()" />
+    <Icon 
+      name="cli"
+      title="CMD PROMPT"
+      filename="cli.png"
+      v-on:dblclick="showCli()"
+      @touchend="showCli()"
+    />
     <CLI @createDirectory="createDirectory" />
-    <EmailIcon v-on:dblclick="showEmail()" @touchend="showEmail()" />
+    
+    <Icon 
+      name="email"
+      title="Email"
+      filename="Mail.png"
+      v-on:dblclick="showEmail()"
+      @touchend="showEmail()"
+    />
     <Email />
-    <ResumeIcon v-on:dblclick="showResume()" @touchend="showResume()" />
+
+    <Icon 
+      name="resume"
+      title="Resume"
+      filename="Resume-Icon.png"
+      v-on:dblclick="showResume()"
+      @touchend="showResume()"
+    />
     <Resume v-bind:style="{ display: isActive ? 'block' : 'none' }" />
+
+    <Icon 
+      name="portfolio"
+      title="Portfolio"
+      filename="DocumentsFolder.png"
+      v-on:dblclick="showPortfolio()"
+      @touchend="showPortfolio()"
+    />
     <Portfolio v-bind:style="{ display: isActive ? 'block' : 'none' }" />
-    <PortfolioIcon v-on:dblclick="showPortfolio()" @touchend="showPortfolio()" />
-    <ReadMe v-on:dblclick="showAboutMe()" @touchend="showAboutMe()" />
+
+    <Icon 
+      name="aboutme"
+      title="README.txt"
+      filename="Pin-sheet.png"
+      v-on:dblclick="showAboutMe()"
+      @touchend="showAboutMe()"
+    />
     <AboutMe v-bind:style="{ display: isActive ? 'block' : 'none' }" />
-    <GamesIcon v-on:dblclick="showGameSelector" />
+
+    <Icon 
+      name="game-selector"
+      title="Games!"
+      filename="DocumentsFolder.png"
+      v-on:dblclick="showGameSelector()"
+      @touchend="showGameSelector()"
+    />
     <GameSelector v-bind:style="{ display: isActive ? 'block' : 'none' }" />
+
     <div v-for="(directory, i) in directories" :key="i">
-      <DirectoryIcon v-on:dblclick="showDirectory(directory.name)" :name="directory.name" />
+      <Icon 
+      :name=directory.name
+      :title=directory.name
+      filename="DocumentsFolder.png"
+      v-on:dblclick="showDirectory(directory.name)"
+      @touchend="showDirectory(directory.name)"
+    />
+      <!-- <DirectoryIcon v-on:dblclick="showDirectory(directory.name)" :name="directory.name" /> -->
       <Directory :name="directory.name" :directories="directories" />
     </div>
 
@@ -23,37 +72,25 @@
 
 <script>
 // @ is an alias to /src
-import CLIIcon from '@/components/CLIIcon.vue'
 import CLI from '@/components/CLI.vue'
-import EmailIcon from '@/components/EmailIcon.vue'
 import Email from '@/components/Email.vue'
-import ResumeIcon from '@/components/ResumeIcon.vue'
 import Resume from '@/components/Resume.vue'
-import AboutMe from '@/components/AboutMe.vue'
-import ReadMe from '@/components/ReadMe.vue'
-import PortfolioIcon from '@/components/PortfolioIcon.vue'
 import Portfolio from '@/components/Portfolio.vue'
-import GamesIcon from './GamesIcon.vue'
+import AboutMe from '@/components/AboutMe.vue'
 import GameSelector from './games/GameSelector.vue'
-import DirectoryIcon from './DirectoryIcon.vue'
 import Directory from './Directory.vue'
+import Icon from './Icon.vue'
 
 export default {
   name: 'Desktop',
   components: {
-    CLIIcon,
+    Icon,
     CLI,
-    EmailIcon,
     Email,
-    ReadMe,
-    ResumeIcon,
     Resume,
     Portfolio,
-    PortfolioIcon,
     AboutMe,
-    GamesIcon,
     GameSelector,
-    DirectoryIcon,
     Directory
   },
   data() {
@@ -64,19 +101,13 @@ export default {
   },
   methods: {
     showAboutMe() {
-      if (document.querySelector('#draggable-container').style.display === "none") {
-        document.querySelector('#draggable-container').style.display = "block"
-      }
+      document.querySelector('#aboutme-container').style.display = "block"
     },
     showPortfolio() {
-      if (document.querySelector('#portfolio-container').style.display === "none") {
-        document.querySelector('#portfolio-container').style.display = "block"
-      }
+      document.querySelector('#portfolio-container').style.display = "block"
     },
     showResume() {
-      if (document.querySelector('#resume-container').style.display === "none") {
-        document.querySelector('#resume-container').style.display = "block"
-      }
+      document.querySelector('#resume-container').style.display = "block"
     },
     showEmail() {
       document.querySelector('#email-container').style.display = "block"
