@@ -1,7 +1,7 @@
 <template>
   <div
-    v-if="!screenSaverActive"
-    v-on:keydown="handleKeyPress"
+    v-show="!screenSaverActive"
+    @keydown="handleKeyPress"
     @click="startScreenSaver"
     @mousemove="startScreenSaver"
     class="home"
@@ -12,7 +12,7 @@
   </div>
   <div
     v-if="screenSaverActive"
-    v-on:keydown="handleKeyPress"
+    @keydown="handleKeyPress"
     @click="stopScreenSaver"
     @mousemove="stopScreenSaver"
     class="screen-saver"
