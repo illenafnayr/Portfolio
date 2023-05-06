@@ -92,7 +92,7 @@ export default {
     },
     showContents(file) {
       const id = file.name.split(' ').join('')
-      if (document.querySelector(`#${id}-file-container`) && document.querySelector(`#${id}-container`).style.display == 'none') {
+      if (document.querySelector(`#${id}-file-container`) && document.querySelector(`#${id}-file-container`).style.display == 'none') {
         document.querySelector(`#${id}-file-container`).style.display = 'block'
         return
       }
