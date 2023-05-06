@@ -10,7 +10,6 @@
       <img src="../assets/me.jpeg" alt="My Smiling Face" id="myFace">
       <h3>Ryan Fanelli</h3>
       <span class="bold">Full-Stack Software Engineer</span>
-      <span class="bold">(802)-777-3409</span>
       <div>
         <span class="contact"><a href="https://www.linkedin.com/in/ryan-fanelli/" target="_blank">LinkedIn</a></span>
         <span class="contact"><a href = "mailto: illenafnayr@gmail.com">illenafnayr@gmail.com</a></span>
@@ -34,6 +33,26 @@
         <div id="technologies"><span class="bold">Technologies: </span>R programming language, Git/GitHub, Google Maps API, Google GeoCoder, TypeScript, JQuery, DataGrip, DbDesign</div>
       </div>
       <hr style="width: 95%">
+      <div>
+        <span class="bold">Experience</span>
+        <div>
+          <div class="project" id="experience">
+            <span class="bold">Software Engineer - Green Mountain Power // April '21 to Present</span>
+            <ul>
+              <li>Full stack engineer</li>
+              <li><a href="https:/www.greenmountainpower.com" target="_blank">www.greenmountainpower.com</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr style="width: 95%">
+        <div class="project" id="experience">
+          <span class="bold">Guitar/Synthesizer/Sound Design - Andrew Alden Ensemble // 2014 - 2016</span>
+          <ul>
+            <li>Circuit-bent synthesizers and digitally manipulated audio data to create unique sounds.</li>
+            <li>Produced textual scores for film and performs them in front of a live audience to transform the picture with new sounds and experiences.</li>
+          </ul>
+        </div>
+      </div>
       <div id="projects">
         <span class="bold">Projects</span>
         <div class="project">
