@@ -2,7 +2,7 @@
   <div :ref="draggable ? 'draggableContainer' : undefined" :id="`${id}-icon-container`" class="icon-container"
     :class="draggable ? undefined : 'icon-grid'">
     <div class="icon-header" @mousedown="dragMouseDown">
-      <img :id="`${id}-icon-img`" :src="require(`../assets/${this.filename}`)" alt="">
+      <img :id="`${id}-icon-img`" :src="require(`../assets/${this.filename}`)" class="icon-img" :alt="name">
     </div>
     <span class="icon-body">{{ title }}</span>
   </div>
@@ -88,8 +88,12 @@ export default {
 }
 
 .icon-body {
-  font-size: .85rem;
+  font-size: 1.25rem;
   color: white;
+}
+
+.icon-img {
+  height: 3.5rem;
 }
 
 .icon-grid {
