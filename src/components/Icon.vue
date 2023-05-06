@@ -1,5 +1,6 @@
 <template>
-  <div :ref="draggable ? 'draggableContainer' : undefined" :id="`${id}-icon-container`" class="icon-container">
+  <div :ref="draggable ? 'draggableContainer' : undefined" :id="`${id}-icon-container`" class="icon-container"
+    :class="draggable ? undefined : 'icon-grid'">
     <div class="icon-header" @mousedown="dragMouseDown">
       <img :id="`${id}-icon-img`" :src="require(`../assets/${this.filename}`)" alt="">
     </div>
@@ -28,8 +29,10 @@ export default {
     }
   },
   mounted() {
-    document.getElementById(`${this.id}-icon-container`).style.left = `${Math.floor(Math.random() * 90)}%`;
-    document.getElementById(`${this.id}-icon-container`).style.top = `${Math.floor(Math.random() * 75)}%`;
+    if (this.draggable) {
+      document.getElementById(`${this.id}-icon-container`).style.left = `${Math.floor(Math.random() * 90)}%`;
+      document.getElementById(`${this.id}-icon-container`).style.top = `${Math.floor(Math.random() * 75)}%`;
+    }
   },
   methods: {
     dragMouseDown: function (event) {
@@ -87,5 +90,11 @@ export default {
 .icon-body {
   font-size: .85rem;
   color: white;
+}
+
+.icon-grid {
+  left: auto;
+  top: auto;
+  position: relative;
 }
 </style>

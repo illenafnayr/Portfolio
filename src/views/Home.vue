@@ -37,7 +37,7 @@ export default {
     ScreenSaver,
   },
   created() {
-    window.addEventListener("keydown", (e) => {
+    window.addEventListener("keydown", () => {
       this.screenSaverActive = undefined;
       this.startScreenSaver();
     });

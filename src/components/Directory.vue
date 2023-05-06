@@ -4,7 +4,7 @@
       <span>C: _/{{ name }}</span>
       <div class="close" v-on:click="close()">X</div>
     </div>
-    <div id="links">
+    <div class="directoryFiles-container">
       <Icon 
         v-for="(icon, i) in subDirectories"
         :key="i"
@@ -62,6 +62,7 @@ export default {
   },
   mounted() {
     document.querySelector(`#${this.id}-directory-container`).style.display = 'none'
+
   },
   methods: {
     dragMouseDown: function (event) {
@@ -150,14 +151,11 @@ export default {
   border-color: #808080 #FFFFFF #FFFFFF #808080;
 }
 
-#links {
+.directoryFiles-container {
   display: flex;
-  flex-direction: column;
   align-content: center;
   justify-content: space-evenly;
-  height: 90%;
-  /* border: 1px solid gold; */
   overflow: auto;
-  padding: 5%;
+  padding: 3%;
 }
 </style>
