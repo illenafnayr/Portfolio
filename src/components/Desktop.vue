@@ -45,13 +45,25 @@
       @touchend="showAboutMe()"
     />
     <AboutMe v-bind:style="{ display: isActive ? 'block' : 'none' }" />
-    <!-- <ReadMe v-on:dblclick="showAboutMe()" @touchend="showAboutMe()" /> -->
 
+    <Icon 
+      name="game-selector"
+      title="Games!"
+      filename="DocumentsFolder.png"
+      v-on:dblclick="showGameSelector()"
+      @touchend="showGameSelector()"
+    />
+    <GameSelector v-bind:style="{ display: isActive ? 'block' : 'none' }" />
 
-    <!-- <GamesIcon v-on:dblclick="showGameSelector" /> -->
-    <!-- <GameSelector v-bind:style="{ display: isActive ? 'block' : 'none' }" /> -->
     <div v-for="(directory, i) in directories" :key="i">
-      <DirectoryIcon v-on:dblclick="showDirectory(directory.name)" :name="directory.name" />
+      <Icon 
+      :name=directory.name
+      :title=directory.name
+      filename="DocumentsFolder.png"
+      v-on:dblclick="showDirectory(directory.name)"
+      @touchend="showDirectory(directory.name)"
+    />
+      <!-- <DirectoryIcon v-on:dblclick="showDirectory(directory.name)" :name="directory.name" /> -->
       <Directory :name="directory.name" :directories="directories" />
     </div>
 
@@ -64,15 +76,9 @@ import CLI from '@/components/CLI.vue'
 import Email from '@/components/Email.vue'
 import Resume from '@/components/Resume.vue'
 import Portfolio from '@/components/Portfolio.vue'
-
-// import ReadMe from '@/components/ReadMe.vue'
 import AboutMe from '@/components/AboutMe.vue'
-
-// import GamesIcon from './GamesIcon.vue'
-// import GameSelector from './games/GameSelector.vue'
-
-// import DirectoryIcon from './DirectoryIcon.vue'
-// import Directory from './Directory.vue'
+import GameSelector from './games/GameSelector.vue'
+import Directory from './Directory.vue'
 import Icon from './Icon.vue'
 
 export default {
@@ -83,14 +89,9 @@ export default {
     Email,
     Resume,
     Portfolio,
-
-    // ReadMe,
     AboutMe,
-    
-    // GamesIcon,
-    // GameSelector,
-    // DirectoryIcon,
-    // Directory
+    GameSelector,
+    Directory
   },
   data() {
     return {
