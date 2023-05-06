@@ -1,6 +1,6 @@
 <template>
-  <div ref="draggableContainer" id="draggable-container">
-    <div id="draggable-header" @mousedown="dragMouseDown">
+  <div ref="draggableContainer" id="aboutme-container">
+    <div id="aboutme-header" @mousedown="dragMouseDown">
       <span>About Me</span>
       <div class="close" v-on:click="closeAboutMe()">X</div>
     </div>
@@ -45,7 +45,7 @@ export default {
       document.onmousemove = null
     },
     closeAboutMe () {
-      document.querySelector('#draggable-container').style.display = 'none'
+      document.querySelector('#aboutme-container').style.display = 'none'
     }
   }
 }
@@ -56,7 +56,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 
-#draggable-container {
+#aboutme-container {
   position: absolute;
   z-index: 10;
   height: 12.42rem;
@@ -75,7 +75,7 @@ export default {
   top: 25%;
   left: 25%;
 }
-#draggable-header {
+#aboutme-header {
   cursor:move;
   z-index: 10;
   border: 1px solid black;
