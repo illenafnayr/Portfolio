@@ -6,7 +6,10 @@
     </div>
 
     <label @click="playAlienAttack" class="button_faux">
-      <button id="blurb">Alien Attack</button>
+      <button id="blurb">Alien Attack 👽</button>
+    </label>
+    <label @click="playDeckOfCards" class="button_faux">
+      <button id="blurb">Deck Of Cards 🃏</button>
     </label>
   </div>
 </template>
@@ -26,6 +29,10 @@ export default {
     playAlienAttack() {
       console.log("Alien Attack! 👽");
       this.$router.push("/games/alien-attack");
+    },
+    playDeckOfCards() {
+      console.log("Deck Of Cards! 🃏");
+      this.$router.push("/games/deck-of-cards");
     },
   },
 };
