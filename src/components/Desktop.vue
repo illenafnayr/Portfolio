@@ -59,9 +59,9 @@
       title="Chicken Art"
       filename="chicken.png"
       :draggable="true"
-      @dblclick="showChicken()"
-      @touchend="showChicken()" />
-      <Chicken />
+      @dblclick="toggleChicken()"
+      @touchend="toggleChicken()" />
+    <Chicken v-bind:style="{ display: activeChicken ? 'block' : 'none' }" />
 
     <div v-for="(directory, i) in directories" :key="i">
       <Icon
@@ -104,6 +104,7 @@ export default {
   data() {
     return {
       isActive: false,
+      activeChicken: false,
       directories: [],
     }
   },
@@ -120,9 +121,8 @@ export default {
     showEmail() {
       document.querySelector('#email-container').style.display = "block";
     },
-    showChicken() {
-      const chickenContainer = document.querySelector('#chicken-container');
-      chickenContainer.style.display = chickenContainer.style.display === "block" ? "" : "block";
+    toggleChicken() {
+      this.activeChicken = !this.activeChicken;
     },
     showCli() {
       document.querySelector('#cli-container').style.display = "block";

@@ -54,9 +54,6 @@ export default {
 #chicken-container {
   height: 100vh;
   width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   display: none;
 }
 </style>

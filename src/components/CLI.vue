@@ -5,7 +5,7 @@
       <div class="close" v-on:click="closeCLI()">X</div>
     </div>
     <span id="cmds">C: _/></span><input type="text" name="command" id="command" @change="ls()"
-      placeholder="Shell commands are defined internally.">
+      placeholder="Type 'ls' to see a list of commands.">
     <p class="listOfCommands">usage 'email' - open email application.</p>
     <p class="listOfCommands">usage 'portfolio' to view portfolio.</p>
     <p class="listOfCommands">usage 'resume' to open resume.</p>

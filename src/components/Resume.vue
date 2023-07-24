@@ -6,14 +6,14 @@
     </div>
     <!-- <iframe src="https://drive.google.com/file/d/1KP3j4HTnb6PT7QXT_49KP7CdftAgPvc7/preview" width="640" height="480"></iframe> -->
     <div id="resumeBody">
-      <span><a href="https://docs.google.com/document/d/1HC395Lwld-MCwlSDf75lkga1hZoJFETzk1aOZK7pJr0/edit" target="_blank">( click for a more formal .pdf version)</a></span>
+      <span><a href="https://docs.google.com/document/d/1HC395Lwld-MCwlSDf75lkga1hZoJFETzk1aOZK7pJr0/edit" target="_blank">(click for a more formal .pdf version)</a></span>
       <img src="../assets/me.jpeg" alt="My Smiling Face" id="myFace">
       <h3>Ryan Fanelli</h3>
       <span class="bold">Full-Stack Software Engineer</span>
       <div>
         <span class="contact"><a href="https://www.linkedin.com/in/ryan-fanelli/" target="_blank">LinkedIn</a></span>
         <span class="contact"><a href = "mailto: illenafnayr@gmail.com">illenafnayr@gmail.com</a></span>
-        <span class="contact"><a href="https://github.com/illenafnayr" target="_blank">GitHub</a></span>
+        <span class="contact"><a href="https://github.com/RyanFanelli" target="_blank">GitHub</a></span>
       </div>
       <div id="stack">
         <img class="tech-logo" src="../assets/react.png" alt="react">
@@ -28,9 +28,9 @@
       <hr style="width: 95%">
       <div id="skills">
         <span class="bold">Skills</span>
-        <div id="frontend"><span class="bold">Frontend: </span>VueJs, ReactJS, EJS, CSS3, Bootstrap, CSS Flexbox / Grid, SASS, HTML, vanilla JavaScript</div>
-        <div id="backend"><span class="bold">Backend: </span>NodeJS, MongoDB/Mongoose, ExpressJS, PostgreSQL, MySQL, Sequelize, Ruby on Rails</div>
-        <div id="technologies"><span class="bold">Technologies: </span>R programming language, Git/GitHub, Google Maps API, Google GeoCoder, TypeScript, JQuery, DataGrip, DbDesign</div>
+        <div id="frontend"><span class="bold">Frontend: </span>React, Vue,  Angular, NextJS, React Native, ThreeJs, Wordpress, Headless WP,  PHP, JQuery, E JS, Sass, CSS, HTML, TypeScript, JavaScript, Design Systems.</div>
+        <div id="backend"><span class="bold">Backend: </span>Java, Spring/SpringBoot, Docker, Firebase, Nginx, NodeJS, ExpressJS, NoSql, PostgreSQL, MySQL, Ruby on Rails, Maven, Oracle</div>
+        <div id="technologies"><span class="bold">Other: </span>R programming language, Python, Tensorflow, PyTorch, Git/GitHub. Agile development practices. Always thirsty for knowledge.</div>
       </div>
       <hr style="width: 95%">
       <div>
@@ -45,66 +45,28 @@
           </div>
         </div>
         <hr style="width: 95%">
-        <div class="project" id="experience">
-          <span class="bold">Guitar/Synthesizer/Sound Design - Andrew Alden Ensemble // 2014 - 2016</span>
-          <ul>
-            <li>Circuit-bent synthesizers and digitally manipulated audio data to create unique sounds.</li>
-            <li>Produced textual scores for film and performs them in front of a live audience to transform the picture with new sounds and experiences.</li>
-          </ul>
+        <div>
+          <div class="project" id="experience">
+            <span class="bold">I.T. Consultant - G.T.DESIGN // December '22 to March '22'</span>
+            <ul>
+              <li>Freelance I.T.  consultant.</li>
+              <li>Reorganization and coordination of internal team and external resources used by the company.</li>
+              <li>Project management for development and implementation of services and information technology.</li>
+              <li><a href="https://www.gtdesign.it/" target="_blank">www.gtdesign.it/</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div id="projects">
-        <span class="bold">Projects</span>
-        <div class="project">
-          <span class="bold"><a href="https://illenafnayr.github.io/Card-Game/" target="_blank">Deck of Cards</a></span>
-          <ul>
-            <li>Displays fundamental understanding of JavaScript in a strictly client-side setting.</li>
-            <li>Uses JavaScript, HTML5, JQuery and Ajax to make requests to a third party API.</li>
-            <li>Utilizes responsive design and a complex user interface.</li>
-          </ul>
-        </div>
-        <div class="project">
-          <span class="bold"><a href="https://toast-apples.herokuapp.com/" target="_blank">Toast</a></span>
-          <ul>
-            <li>Full-stack application that stores unique user data including encrypted passwords.</li>
-            <li>Built using NodeJS, ExpressJS, MongoDB/Mongoose for server-side scripting.</li>
-            <li>Embedded JavaScript as a template engine, JavaScript, JQuery and CSS for client-side scripting.</li>
-          </ul>
-        </div>
-        <div class="project">
-          <span class="bold"><a href="https://face-less.herokuapp.com/" target="_blank">Faceless</a></span>
-          <ul>
-            <li>Full-stack single page application using a ReactJs front-end.</li>
-            <li>Built using NodeJS, ExpressJS, MongoDB/Mongoose for server-side scripting.</li>
-            <li>Partner project. GitHub for version control, Trello for project management.</li>
-          </ul>
-        </div>
-        <div class="project">
-          <span class="bold"><a href="https://github.com/SustainableCities" target="_blank">Sustainable Cities hackathon</a></span>
-          <ul>
-            <li>Three day collaboration with a data scientist, UX/UI designers and a development team.</li>
-            <li>React application, with an express server. Maps a CSV file (created from an array public data resources, handed over from data scientist) to usable REST API using Sequelize</li>
-            <li>To be continued in the future...</li>
-          </ul>
-        </div>
-        <div class="project">
-          <span class="bold"><a href="https://shielded-journey-24875.herokuapp.com/" target="_blank">Corner Store Skateboard Co.</a></span>
-          <ul>
-            <li>Extensive mySQL database and mapped to a REST API using Sequelize and ExpressJs </li>
-            <li>VueJs Front end with vue router</li>
-            <li>Currently under the hands of a UX/UI designer for a makeover and will implement stripe API to process payments</li>
-          </ul>
-        </div>         
       </div>
       <hr style="width: 95%">
       <div>
-        <span class="bold">Experience</span>
+        <span class="bold">Other Experience</span>
         <div>
           <div class="project" id="experience">
             <span class="bold">Research Assistant - Woodhams Lab // January ‘19 to January ‘20</span>
             <ul>
               <li>Conducted experiments, statistically analyzed field data to help cure global amphibian pathogens.</li>
               <li>Audited a course in R programming language.</li>
+              <li>Data analysis with Python Pandas, Matplotlib, and R.</li>
             </ul>
           </div>
         </div>
@@ -113,6 +75,24 @@
           <ul>
             <li>Circuit-bent synthesizers and digitally manipulated audio data to create unique sounds.</li>
             <li>Produced textual scores for film and performs them in front of a live audience to transform the picture with new sounds and experiences.</li>
+          </ul>
+        </div>
+        <div class="project" id="experience">
+          <span class="bold">Production Intern - Z2 Productions // 2012</span>
+          <ul>
+            <li>Front and back of house audio engineer intern at Fox Theatre and Boulder Theatre.</li>
+            <li>Worked with live recording software such as Pro Tools and logic.</li>
+          </ul>
+        </div>
+      </div>
+      <hr style="width: 95%">
+      <div id="projects">
+        <span class="bold">Projects</span>
+        <div class="project">
+          <span class="bold"><a href="https://github.com/SustainableCities" target="_blank">Sustainable Cities hackathon</a></span>
+          <ul>
+            <li>Three day hackathon with a data scientist, UX/UI designers and a development team.</li>
+            <li>React application, with an express server. Maps a CSV file (created from an array public data resources, handed over from data scientist) to usable REST API using Sequelize</li>
           </ul>
         </div>
       </div>
@@ -135,7 +115,7 @@
         <div class="project">
           <span class="bold">Berklee College of Music - Jazz Composition</span>
           <ul>
-            <li>94 credits out of 120 toward Bachelor of Music</li>
+            <li>94 credits toward Bachelor of Music</li>
           </ul>
         </div>        
       </div>
