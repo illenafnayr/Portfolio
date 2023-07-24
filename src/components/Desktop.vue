@@ -54,6 +54,15 @@
       v-on:dblclick="showGameSelector()" @touchend="showGameSelector()" />
     <GameSelector v-bind:style="{ display: isActive ? 'block' : 'none' }" />
 
+    <Icon
+      name="chicken"
+      title="Chicken Art"
+      filename="chicken.png"
+      :draggable="true"
+      @dblclick="showChicken()"
+      @touchend="showChicken()" />
+      <Chicken />
+
     <div v-for="(directory, i) in directories" :key="i">
       <Icon
         :name=directory.name
@@ -68,19 +77,21 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import CLI from '@/components/CLI.vue'
-import Email from '@/components/Email.vue'
-import Resume from '@/components/Resume.vue'
-import Portfolio from '@/components/Portfolio.vue'
-import AboutMe from '@/components/AboutMe.vue'
-import GameSelector from './games/GameSelector.vue'
-import Directory from './Directory.vue'
-import Icon from './Icon.vue'
+
+import CLI from '@/components/CLI.vue';
+import Email from '@/components/Email.vue';
+import Resume from '@/components/Resume.vue';
+import Portfolio from '@/components/Portfolio.vue';
+import AboutMe from '@/components/AboutMe.vue';
+import GameSelector from './games/GameSelector.vue';
+import Directory from './Directory.vue';
+import Icon from './Icon.vue';
+import Chicken from './chicken/Chicken.vue';
 
 export default {
   name: 'Desktop',
   components: {
+    Chicken,
     Icon,
     CLI,
     Email,
@@ -88,7 +99,7 @@ export default {
     Portfolio,
     AboutMe,
     GameSelector,
-    Directory
+    Directory,
   },
   data() {
     return {
@@ -98,26 +109,30 @@ export default {
   },
   methods: {
     showAboutMe() {
-      document.querySelector('#aboutme-container').style.display = "block"
+      document.querySelector('#aboutme-container').style.display = "block";
     },
     showPortfolio() {
-      document.querySelector('#portfolio-container').style.display = "block"
+      document.querySelector('#portfolio-container').style.display = "block";
     },
     showResume() {
-      document.querySelector('#resume-container').style.display = "block"
+      document.querySelector('#resume-container').style.display = "block";
     },
     showEmail() {
-      document.querySelector('#email-container').style.display = "block"
+      document.querySelector('#email-container').style.display = "block";
+    },
+    showChicken() {
+      const chickenContainer = document.querySelector('#chicken-container');
+      chickenContainer.style.display = chickenContainer.style.display === "block" ? "" : "block";
     },
     showCli() {
-      document.querySelector('#cli-container').style.display = "block"
+      document.querySelector('#cli-container').style.display = "block";
       let input = document.querySelector('#command');
       input.focus();
       input.select();
     },
     showGameSelector() {
       if (document.querySelector('#game-selector-container').style.display === "none") {
-        document.querySelector('#game-selector-container').style.display = "block"
+        document.querySelector('#game-selector-container').style.display = "block";
       }
     },
     createDirectory(name) {
@@ -130,7 +145,7 @@ export default {
     },
     showDirectory(id) {
       if (document.querySelector(`#${id}-directory-container`).style.display === "none") {
-        document.querySelector(`#${id}-directory-container`).style.display = "block"
+        document.querySelector(`#${id}-directory-container`).style.display = "block";
       }
     }
   }
@@ -144,7 +159,6 @@ export default {
 #desktop {
   height: calc(100vh - 54px);
   width: 100vw;
-  /* border: 1px solid gold; */
 }
 
 #title {
